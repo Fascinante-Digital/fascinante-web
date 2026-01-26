@@ -85,13 +85,13 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search..."
-            className="border-border bg-background text-foreground focus:ring-ring/30 h-11 w-full rounded-[12px] border px-3 text-sm outline-none focus:ring-2"
+            className="border-border bg-background text-foreground focus:ring-ring/30 h-11 w-full rounded-[12px] border px-3 text-base outline-none focus:ring-2"
           />
 
           {/* Mobile: dropdown */}
           <div className="lg:hidden">
             <Select value={category} onValueChange={setCategory}>
-              <SelectTrigger className="border-border bg-background text-foreground focus:ring-ring/30 h-11 w-full rounded-[12px] border px-3 text-sm shadow-none focus:ring-2">
+              <SelectTrigger className="border-border bg-background text-foreground focus:ring-ring/30 h-11 w-full rounded-[12px] border px-3 text-base shadow-none focus:ring-2">
                 <SelectValue placeholder={ALL} />
               </SelectTrigger>
 
