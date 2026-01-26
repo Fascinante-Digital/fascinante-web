@@ -164,7 +164,7 @@
   --shadow-soft: var(--shadow-soft);
   --shadow-light: var(--shadow-light);
 
-  /* Typography - Mobile (default) */
+  /* Typography - Mobile default (30px H1) */
   --text-h1: 30px;
   --leading-h1: 40px;
   --text-h2: 26px;
@@ -180,7 +180,7 @@
 }
 
 @media (min-width: 768px) {
-  @theme inline {
+  :root {
     /* Typography - Tablet */
     --text-h1: 42px;
     --leading-h1: 52px;
@@ -198,7 +198,7 @@
 }
 
 @media (min-width: 1024px) {
-  @theme inline {
+  :root {
     /* Typography - Desktop */
     --text-h1: 54px;
     --leading-h1: 64px;
@@ -230,33 +230,89 @@
 
 /* Typography Utility Classes - Consistent across all headings */
 @utility text-h1 {
-  font-size: var(--text-h1);
-  line-height: var(--leading-h1);
+  font-size: 30px;
+  line-height: 40px;
 }
 
 @utility text-h2 {
-  font-size: var(--text-h2);
-  line-height: var(--leading-h2);
+  font-size: 26px;
+  line-height: 34px;
 }
 
 @utility text-h3 {
-  font-size: var(--text-h3);
-  line-height: var(--leading-h3);
+  font-size: 22px;
+  line-height: 30px;
 }
 
 @utility text-h4 {
-  font-size: var(--text-h4);
-  line-height: var(--leading-h4);
+  font-size: 18px;
+  line-height: 26px;
 }
 
 @utility text-h5 {
-  font-size: var(--text-h5);
-  line-height: var(--leading-h5);
+  font-size: 16px;
+  line-height: 22px;
 }
 
 @utility text-h6 {
-  font-size: var(--text-h6);
-  line-height: var(--leading-h6);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .text-h1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
+  .text-h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  .text-h3 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .text-h4 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .text-h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .text-h6 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .text-h1 {
+    font-size: 54px;
+    line-height: 64px;
+  }
+  .text-h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .text-h3 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .text-h4 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .text-h5 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .text-h6 {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 /* Base heading styles */

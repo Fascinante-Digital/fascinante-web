@@ -1,5 +1,5 @@
-import FascinanteCta from '@/components/sections/cta';
 import FascinanteAboutHero from '@/components/sections/about-hero';
+import FascinanteCta from '@/components/sections/cta';
 import FascinantePartnerLogos from '@/components/sections/partner-logos';
 import FascinanteTeam from '@/components/sections/team';
 import FascinanteThroughYears from '@/components/sections/trough-years';

@@ -1,34 +1,19 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import prettierConfig from 'eslint-config-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import typescriptESLint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: {},
-});
-
-const eslintConfig = [
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...typescriptESLint.configs.recommended,
   {
-    ignores: ['node_modules/**'],
+    ...prettierConfig,
   },
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'plugin:prettier/recommended',
-    'next',
-    'plugin:jsx-a11y/recommended',
-  ),
   {
     plugins: {
       'simple-import-sort': simpleImportSort,
+      '@typescript-eslint': typescriptESLint.plugin,
     },
     rules: {
       '@next/next/no-html-link-for-pages': 'off',
@@ -50,43 +35,20 @@ const eslintConfig = [
       '@typescript-eslint/no-empty-object-type': 'off',
       'react/no-unescaped-entities': 'off',
       'no-console': 'error',
-      'import/order': [
-        'error',
-        {
-          groups: [
-            ['builtin', 'external'],
-            ['internal', 'parent', 'sibling', 'index'],
-          ],
-          pathGroups: [
-            {
-              pattern: 'react',
-              group: 'builtin',
-              position: 'before',
-            },
-            {
-              pattern: 'next/**',
-              group: 'builtin',
-              position: 'before',
-            },
-            {
-              pattern: '@/**',
-              group: 'internal',
-              position: 'after',
-            },
-          ],
-          pathGroupsExcludedImportTypes: ['builtin'],
-          'newlines-between': 'always',
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: true,
-          },
-        },
-      ],
-      'import/order': 'off',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      'react-hooks/set-state-in-effect': 'warn',
+      'react-hooks/exhaustive-deps': 'warn',
     },
   },
-];
+  globalIgnores([
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
+    'node_modules/**',
+    '.astro/**',
+  ]),
+]);
 
 export default eslintConfig;

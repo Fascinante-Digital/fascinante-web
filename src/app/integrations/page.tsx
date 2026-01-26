@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FascinanteCta from '@/components/sections/cta';
 import FascinanteAllIntegrations from '@/components/sections/all-integrations';
+import FascinanteCta from '@/components/sections/cta';
 import FascinanteIntegrationsHero from '@/components/sections/integrations-hero';
 
 const page = () => {

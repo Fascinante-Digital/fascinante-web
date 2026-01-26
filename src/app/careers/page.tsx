@@ -1,5 +1,5 @@
-import FascinanteCta from '@/components/sections/cta';
 import FascinanteCareersHero from '@/components/sections/careers-hero';
+import FascinanteCta from '@/components/sections/cta';
 import FascinanteJobOpenings from '@/components/sections/job-openings';
 import FascinanteMission from '@/components/sections/mission';
 import FascinantePerks from '@/components/sections/perks';
