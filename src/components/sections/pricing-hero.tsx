@@ -24,35 +24,36 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    name: 'Standard',
-    monthlyPrice: '$22.99',
-    annualPrice: '$15.99',
-    perUnitMonthly: 'Per user / billed monthly',
-    perUnitAnnual: 'Per user / billed yearly',
-    blurb: 'Access a complete payments platform with simple.',
+    name: 'Starter Growth',
+    monthlyPrice: '$299',
+    annualPrice: '$249',
+    perUnitMonthly: 'Per month, billed monthly',
+    perUnitAnnual: 'Per month, billed yearly',
+    blurb: 'Essential marketing tools for small businesses ready to grow online.',
     features: [
-      'All features from the Personal package',
-      'File upload limit of up to 100MB per file',
-      'Unlimited revision & request',
-      'Unlimited users',
-      'Pause & Cancel anytime',
+      'Local SEO optimization',
+      'Google Business Profile management',
+      'Social media management (2 platforms)',
+      'Monthly performance report',
+      'Email support',
     ],
     ctaLabel: 'Get Started',
     ctaHref: '/pricing',
     highlight: true,
-    badge: '🔥 30% off',
+    badge: '🔥 Best Value',
   },
   {
-    name: 'Custom',
-    blurb: 'Access a complete payments platform with simple.',
+    name: 'Market Leader',
+    blurb: 'Comprehensive digital presence for businesses targeting aggressive growth.',
     features: [
-      'All features from the Team package',
-      'Deeper integration and API customization',
-      'Unlimited revision & request',
-      'Unlimited users',
-      'Pause & Cancel anytime',
+      'Everything in Starter Growth',
+      'Advanced SEO & content strategy',
+      'Social media management (5 platforms)',
+      'PPC campaign management',
+      'Weekly performance calls',
+      'Priority support',
     ],
-    ctaLabel: 'Contact Sales',
+    ctaLabel: 'Contact Us',
     ctaHref: '/contact',
   },
 ];
@@ -67,11 +68,11 @@ export default function FascinantePricingHero() {
           <div className="mx-auto max-w-4xl px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
             <p className="text-tagline text-sm sm:text-base">Pricing</p>
             <h1 className="text-foreground mt-4 text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl md:text-[68px]">
-              Simple, Flexible
-              <br className="hidden sm:block" /> Pricing
+              Simple Pricing for
+              <br className="hidden sm:block" /> Real Growth
             </h1>
             <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base sm:text-lg">
-              Pricing plans for businesses at every stage of growth.
+              Choose the plan that fits your business goals and start seeing results.
             </p>
 
             <div className="mt-6 flex items-center justify-center gap-3">

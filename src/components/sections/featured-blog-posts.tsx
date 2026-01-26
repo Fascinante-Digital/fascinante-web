@@ -15,9 +15,9 @@ export type FeaturedCard = {
 
 export default function FascinanteFeaturedBlogPosts({
   posts = [],
-  title = 'Latest Digital Marketing Insights',
-  overline = 'Our Blog',
-  subtitle = "Discover the latest trends, strategies, and insights from our digital marketing experts.",
+  title = 'Latest Articles',
+  overline = 'From Our Blog',
+  subtitle = "Explore more insights and strategies from our digital marketing experts.",
 }: {
   posts?: FeaturedCard[];
   title?: string;

@@ -5,10 +5,11 @@ import Link from 'next/link';
 
 import type { BlogPost } from '@/lib/blog';
 
-export default function FeaturedPost({ post }: { post: BlogPost }) {
+export default function FeaturedPost({ post, tagline = 'Featured Article' }: { post: BlogPost; tagline?: string }) {
   return (
     <section className="px-6 py-10 lg:py-16">
       <div className="container px-0">
+        <p className="text-tagline text-sm sm:text-base">{tagline}</p>
         <Link href={`/blog/${post.slug}`}>
           <article className="bg-accent p-5 lg:p-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
@@ -17,9 +18,9 @@ export default function FeaturedPost({ post }: { post: BlogPost }) {
                   {!!post.tagline && (
                     <span className="text-tagline text-md">{post.tagline}</span>
                   )}
-                  <h1 className="text-foreground mt-3 text-[32px] leading-[1.25] tracking-tight lg:text-[36px]">
+                  <h2 className="text-foreground mt-3 text-[32px] leading-[1.25] tracking-tight lg:text-[36px]">
                     {post.title}
-                  </h1>
+                  </h2>
                   {!!post.description && (
                     <p className="text-muted-foreground mt-3 max-w-[640px]">
                       {post.description}
