@@ -49,6 +49,8 @@ export default function BlogPage() {
             </div>
           </div>
         </div>
+
+        <div className="h-6 sm:h-8" />
       </section>
       {featured && <FeaturedPost post={featured} />}
       <FascinanteBlogGrid posts={gridPosts} />
