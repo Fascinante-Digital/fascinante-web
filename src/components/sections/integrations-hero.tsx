@@ -33,7 +33,7 @@ export default function FascinanteIntegrationsHero({
           <div className="mx-auto max-w-5xl px-6 py-16 text-center sm:px-8 sm:py-20 md:py-24">
             <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
 
-            <h1 className="text-foreground text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl md:text-[68px]">
+            <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance">
               {title}
             </h1>
 

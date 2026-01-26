@@ -15,7 +15,7 @@ const FascinanteCta = () => {
       <div className="bg-tagline pointer-events-none absolute top-0 left-1/2 h-full w-[500px] -translate-x-1/2" />
 
       <div className="relative container px-0 py-16 text-center sm:py-20 md:px-6 md:py-28">
-        <h2 className="text-primary-foreground mx-auto max-w-5xl text-4xl leading-tight font-medium text-balance sm:text-5xl md:text-6xl">
+        <h2 className="text-primary-foreground mx-auto max-w-5xl text-h2 font-medium text-balance">
           Simplifying Payments
           <br className="hidden sm:block" /> for Growing Business
         </h2>

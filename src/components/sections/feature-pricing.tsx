@@ -26,7 +26,7 @@ export default function FascinanteFeaturePricing({
           <div className="max-w-xl">
             <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
 
-            <h2 className="text-foreground text-3xl leading-tight font-medium tracking-tight sm:text-5xl md:text-[56px]">
+            <h2 className="text-foreground text-h2 font-medium tracking-tight">
               {title}
             </h2>
 
