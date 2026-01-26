@@ -36,7 +36,7 @@ export default function FascinanteFeaturesHero({
                 {overline}
               </p>
 
-              <h2 className="text-foreground text-[36px] leading-[1.05] font-medium tracking-tight sm:text-5xl md:text-[64px]">
+              <h2 className="text-foreground text-h2 tracking-tight font-medium">
                 {title.split('\n').map((line, i) => (
                   <span key={i} className={i > 0 ? 'block' : undefined}>
                     {line}

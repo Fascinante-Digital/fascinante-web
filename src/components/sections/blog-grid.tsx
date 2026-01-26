@@ -177,7 +177,7 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
                         <span className="text-tagline">{p.tagline}</span>
                       )}
 
-                      <h4 className="text-foreground mt-2 text-[20px] leading-[1.3] tracking-tight">
+                      <h4 className="text-foreground mt-2 text-h4 tracking-tight">
                         {p.title}
                       </h4>
 

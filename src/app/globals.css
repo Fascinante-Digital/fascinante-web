@@ -163,6 +163,56 @@
 
   --shadow-soft: var(--shadow-soft);
   --shadow-light: var(--shadow-light);
+
+  /* Typography - Mobile (default) */
+  --text-h1: 30px;
+  --leading-h1: 40px;
+  --text-h2: 26px;
+  --leading-h2: 34px;
+  --text-h3: 22px;
+  --leading-h3: 30px;
+  --text-h4: 18px;
+  --leading-h4: 26px;
+  --text-h5: 16px;
+  --leading-h5: 22px;
+  --text-h6: 14px;
+  --leading-h6: 20px;
+}
+
+@media (min-width: 768px) {
+  @theme inline {
+    /* Typography - Tablet */
+    --text-h1: 42px;
+    --leading-h1: 52px;
+    --text-h2: 34px;
+    --leading-h2: 44px;
+    --text-h3: 26px;
+    --leading-h3: 34px;
+    --text-h4: 20px;
+    --leading-h4: 28px;
+    --text-h5: 18px;
+    --leading-h5: 24px;
+    --text-h6: 16px;
+    --leading-h6: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  @theme inline {
+    /* Typography - Desktop */
+    --text-h1: 54px;
+    --leading-h1: 64px;
+    --text-h2: 40px;
+    --leading-h2: 48px;
+    --text-h3: 30px;
+    --leading-h3: 38px;
+    --text-h4: 22px;
+    --leading-h4: 30px;
+    --text-h5: 18px;
+    --leading-h5: 26px;
+    --text-h6: 16px;
+    --leading-h6: 24px;
+  }
 }
 
 @utility container {
@@ -172,10 +222,64 @@
   /* on small screens, full-width up to padding */
   max-width: 100%;
 
-  /* when you hit your “desktop” breakpoint, cap it */
+  /* when you hit your "desktop" breakpoint, cap it */
   @media (min-width: 1200px) {
     max-width: 1200px;
   }
+}
+
+/* Typography Utility Classes - Consistent across all headings */
+@utility text-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+}
+
+@utility text-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+}
+
+@utility text-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+}
+
+@utility text-h4 {
+  font-size: var(--text-h4);
+  line-height: var(--leading-h4);
+}
+
+@utility text-h5 {
+  font-size: var(--text-h5);
+  line-height: var(--leading-h5);
+}
+
+@utility text-h6 {
+  font-size: var(--text-h6);
+  line-height: var(--leading-h6);
+}
+
+/* Base heading styles */
+@layer base {
+  h1 {
+    @apply text-h1 font-medium tracking-tight;
+  }
+  h2 {
+    @apply text-h2 font-medium tracking-tight;
+  }
+  h3 {
+    @apply text-h3 font-medium tracking-tight;
+  }
+  h4 {
+    @apply text-h4 font-medium;
+  }
+  h5 {
+    @apply text-h5 font-medium;
+  }
+  h6 {
+    @apply text-h6 font-medium;
+  }
+}
 }
 
 /*

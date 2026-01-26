@@ -28,7 +28,7 @@ export default function FascinanteBlogPost({
           <div className="mx-auto max-w-[992px] px-4 py-6 md:py-12">
             {!!tagline && <span className="text-tagline">{tagline}</span>}
 
-            <h1 className="text-foreground mt-3 text-[34px] leading-[1.2] tracking-tight lg:text-[40px]">
+            <h1 className="text-foreground mt-3 text-h1 tracking-tight">
               {title}
             </h1>
 

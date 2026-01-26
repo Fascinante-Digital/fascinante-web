@@ -166,7 +166,7 @@ export default function FascinantePricingHero() {
                         <>
                           <div
                             className={cn(
-                              'mt-6 text-[40px] leading-none font-semibold sm:text-[44px]',
+                              'mt-6 text-h2 font-semibold',
                             )}
                           >
                             {price}

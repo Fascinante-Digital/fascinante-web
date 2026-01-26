@@ -78,7 +78,7 @@ function PostRow(p: FeaturedCard) {
           {!!p.tagline && (
             <div className="text-tagline text-sm">{p.tagline}</div>
           )}
-          <h3 className="text-foreground mt-1 text-[22px] leading-[1.25] font-medium tracking-tight">
+          <h3 className="text-foreground mt-1 text-h3 font-medium tracking-tight">
             {p.title}
           </h3>
           {!!p.intro && (

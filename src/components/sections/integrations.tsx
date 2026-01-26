@@ -70,7 +70,7 @@ function IntegrationCard({ item }: { item: Integration }) {
       </div>
 
       <div className="pt-6">
-        <h3 className="text-foreground text-[20px] leading-tight font-medium">
+        <h3 className="text-foreground text-h4 leading-tight font-medium">
           {item.name}
         </h3>
         <p className="text-muted-foreground mt-2 text-base font-normal">
