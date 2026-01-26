@@ -44,10 +44,10 @@ export const Footer = () => {
       <div className="container py-12 md:py-16">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="md:min-w-[140px]">
-            <Link href="/" aria-label="Metafi">
+            <Link href="/" aria-label="Fascinante Digital">
               <Image
                 src="/images/layout/logo.svg"
-                alt="Metafi"
+                alt="Fascinante Digital"
                 width={140}
                 height={32}
                 className="invert"
@@ -84,7 +84,7 @@ export const Footer = () => {
         {/* bottom bar */}
         <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-muted-foreground text-sm font-normal">
-            © {new Date().getFullYear()} Metafi. All rights reserved
+            © {new Date().getFullYear()} Fascinante Digital. All rights reserved
           </p>
 
           <div className="flex items-center gap-4">

@@ -19,7 +19,7 @@ const Login = () => {
           <div className="mb-4 flex size-12 w-full items-center justify-center rounded-full sm:mb-5">
             <Image
               src="/images/layout/logo-single.svg"
-              alt="Metafi logo"
+              alt="Fascinante Digital logo"
               width={40}
               height={40}
               className="h-10 w-10"

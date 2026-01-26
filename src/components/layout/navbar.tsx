@@ -82,7 +82,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/layout/logo.svg"
-            alt="Metafi"
+            alt="Fascinante Digital"
             width={129}
             height={32}
             className="invert-0 dark:invert"
