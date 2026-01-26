@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fascinantedigital.com'),
   title: {
     default: 'Fascinante Digital - Modern Next.js Template',
     template: '%s | Fascinante Digital',
