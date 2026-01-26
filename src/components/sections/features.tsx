@@ -16,25 +16,25 @@ const FEATURES: Feature[] = [
   {
     title: 'Checkout',
     description:
-      'Embed checkout into your website or direct customers to a Metafi-hosted page to easily and securely accept one-time payments or subscriptions.',
+      'Convert visitors into customers with optimized checkout flows and seamless payment processing.',
     image: '/images/homepage/features/animation1.svg',
   },
   {
     title: 'Recurring Billing',
     description:
-      'Collect and retain more revenue, automate revenue management workflows, and accept payments.',
+      'Automate subscription management and retain more recurring revenue for your business.',
     image: '/images/homepage/features/recurring-billing.webp',
   },
   {
     title: 'Invoicing',
     description:
-      'Create an invoice and send it to your customers in minutes—no-code required—to easily collect payments.',
+      'Create and send professional invoices in minutes—no-code required—to collect payments faster.',
     image: '/images/homepage/features/invoicing.webp',
   },
   {
     title: 'Payment Link',
     description:
-      'Sell online without a website. Create a full payment page in a few clicks and share the link with customers—no code required.',
+      'Sell online without a website. Create a full payment page in a few clicks and share the link.',
     image: '/images/homepage/features/payment-link.webp',
   },
 ];
@@ -91,14 +91,13 @@ const FascinanteFeatures = () => {
         </p>
 
         <h2 className="text-foreground mx-auto max-w-3xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Everything You Need to Run & <br className="hidden sm:block" />
-          Grow Your Business
+          Everything You Need to <br className="hidden sm:block" />
+          Grow Online
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base sm:text-lg">
-          All the tools and resources necessary for managing and expanding your
-          business, conveniently accessible in one place. Take control of your
-          journey to success with our comprehensive solutions.
+          All the tools and strategies to attract, convert, and retain customers.
+          Scale your digital presence with our comprehensive marketing solutions.
         </p>
 
         <div className="mt-12 flex flex-col gap-6 md:mt-14 md:gap-8 lg:flex-row">

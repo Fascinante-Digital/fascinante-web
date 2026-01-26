@@ -7,23 +7,23 @@ type QA = { question: string; answer: string };
 
 const FAQS: QA[] = [
   {
-    question: 'How can I send one-time or recurring invoices to customers?',
+    question: 'How can digital marketing help grow my business?',
     answer:
-      'Metafi Billing lets you create both one-time and recurring invoices. You can generate payment links or embed checkout forms directly on your site, making it easy for customers to pay securely without extra setup.',
+      'Digital marketing increases your online visibility, attracts qualified leads, and improves conversion rates. Through SEO, content marketing, and targeted campaigns, you can reach your ideal customers where they spend their time.',
   },
   {
-    question: 'How do I create and send an invoice using Metafi Billing?',
-    answer: `To create an invoice:\n1. Log in to your Metafi Billing dashboard.\n2. Open the “Invoices” section and select **Create New Invoice**.\n3. Add client details, invoice date, and line items.\n4. Review everything, then click **Send** to email the invoice directly to your customer.`,
+    question: 'What digital marketing services do you offer?',
+    answer: `We offer a comprehensive range of services:\n1. Search Engine Optimization (SEO)\n2. Pay-Per-Click Advertising (PPC)\n3. Content Marketing\n4. Social Media Marketing\n5. Email Marketing\n6. Analytics and Reporting`,
   },
   {
-    question: 'How do I mark an invoice as paid outside of Metafi?',
+    question: 'How long does it take to see results from digital marketing?',
     answer:
-      'If you receive payment through another channel—such as a bank transfer or cash—you can mark the invoice as paid manually. Open the invoice, choose **Mark as Paid**, select “Out of band,” and record any payment reference or note for accurate reconciliation.',
+      'Results vary by strategy. PPC campaigns can generate leads within days, while SEO typically shows significant results in 3-6 months. We provide regular reports so you can track progress at every stage.',
   },
   {
-    question: 'How can I calculate my trial conversion rate in Billing?',
+    question: 'How do you measure marketing success?',
     answer:
-      'In your Billing dashboard, open **Analytics**, then select the **Funnels** tab and choose **Trials**. The report shows how many customers started a trial and how many converted to paid plans. You can filter results by date range and export them for further analysis.',
+      'We track key performance indicators (KPIs) including website traffic, lead generation, conversion rates, ROI, and customer acquisition costs. Our detailed reports give you complete visibility into campaign performance.',
   },
 ];
 
@@ -146,12 +146,11 @@ export default function FascinanteFaq() {
         </p>
 
         <h2 className="text-foreground mx-auto mb-4 max-w-3xl text-center text-3xl leading-tight font-medium tracking-tight sm:text-4xl md:text-5xl">
-          Frequently Asked Questions
+          Frequently Asked Questions About Our Services
         </h2>
 
         <p className="text-muted-foreground mx-auto max-w-2xl text-center text-base font-normal sm:text-lg">
-          Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas
-          montes mauris. Auctor vitae neque urna nam nunc pellentesque.
+          Get answers to common questions about our digital marketing services and how we help businesses grow.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 sm:mt-14">

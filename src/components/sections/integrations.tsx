@@ -14,42 +14,42 @@ const INTEGRATIONS: Integration[] = [
   {
     name: 'Shopify integration',
     description:
-      'Scale your entire business with the best ranked commerce platform',
+      'Scale your e-commerce business with the leading commerce platform',
     icon: '/images/homepage/integrations/shopify.svg',
     href: '#',
   },
   {
     name: 'Slack integration',
     description:
-      'With Metafi’s integration for Slack, your team can seamlessly send messages to a Metafi database',
+      'Get real-time notifications and updates directly in your team channels',
     icon: '/images/homepage/integrations/slack.svg',
     href: '#',
   },
   {
     name: 'Zapier integration',
     description:
-      'Connect Apps and Automate Workflows with Zapier — No Coding Required.',
+      'Connect apps and automate workflows without writing any code.',
     icon: '/images/homepage/integrations/zapier.svg',
     href: '#',
   },
   {
     name: 'Google integration',
     description:
-      'Comprehensive tools to connect applications (Google Cloud and others).',
+      'Connect Google Analytics, Ads, and other Google tools seamlessly.',
     icon: '/images/homepage/integrations/google.svg',
     href: '#',
   },
   {
     name: 'Okta integration',
     description:
-      'Scale & flexibility with the broadest & deepest set of integrations',
+      'Enterprise-grade security and authentication for your team.',
     icon: '/images/homepage/integrations/okta.svg',
     href: '#',
   },
   {
     name: 'Stripe integration',
     description:
-      'Work faster and smarter by integrating directly with Notion, right in the app.',
+      'Accept payments securely with the world\'s leading payment platform.',
     icon: '/images/homepage/integrations/stripe.svg',
     href: '#',
   },
@@ -90,8 +90,8 @@ const FascinanteIntegrations = () => {
         </p>
 
         <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Make Payments Easier <br className="hidden sm:block" />
-          with 50+ Integrations
+          Attract More Leads <br className="hidden sm:block" />
+          and Convert Better
         </h2>
 
         <ul className="mt-10 grid gap-12 sm:grid-cols-2 sm:gap-6 md:mt-20 md:gap-8 lg:grid-cols-3 [@media(min-width:1024px)]:[&>li:nth-child(n+4)]:mt-8">
@@ -101,9 +101,8 @@ const FascinanteIntegrations = () => {
         </ul>
 
         <p className="text-muted-foreground text-md text-md mx-auto mt-10 max-w-3xl font-normal md:mt-20">
-          Streamline your business operations with seamless integrations.
-          Connect with Xero, WooCommerce, Zapier, Stripe, Shopify, QuickBooks,
-          and many other platforms.
+          Connect your favorite marketing and business tools to streamline workflows.
+          Integrate with Google Analytics, HubSpot, Salesforce, Mailchimp, and more.
         </p>
 
         <div className="mt-6 flex justify-center">

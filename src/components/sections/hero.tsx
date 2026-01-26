@@ -28,12 +28,11 @@ const FascinanteHero = () => {
       <div className="relative container px-0 md:px-6">
         <div className="mx-auto grid max-w-4xl gap-6 py-14 text-center sm:py-16 md:gap-8 md:pt-24 md:pb-20">
           <h1 className="text-foreground text-4xl leading-tight font-medium tracking-tight text-balance sm:text-5xl md:text-[68px]">
-            Simplifying Payments for Growing Business
+            Digital Marketing That Grows Your Business
           </h1>
           <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-base sm:text-lg">
-            Streamlining transactions for expanding enterprises. Our solutions
-            simplify payment processes, empowering businesses to focus on growth
-            and innovation.
+            Attract more leads, convert better, and grow your online presence.
+            Our solutions help businesses scale with data-driven marketing strategies.
           </p>
           <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
             <Button
@@ -56,7 +55,7 @@ const FascinanteHero = () => {
         <div className="mx-auto flex w-full max-w-[994px] items-center justify-center rounded-t-[16px] bg-white/20 shadow-[0_15px_80px_-1px_rgba(8,9,10,0.04)] backdrop-blur-[20px]">
           <Image
             src="/images/homepage/hero/Dashboard.webp"
-            alt="Metafi dashboard preview"
+            alt="Fascinante Digital dashboard preview"
             width={994}
             height={707}
             priority

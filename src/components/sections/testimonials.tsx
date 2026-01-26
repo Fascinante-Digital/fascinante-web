@@ -15,83 +15,83 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      '“Payments are the main interaction point between our financial services clients and their customers, and are core to our relationships beyond that sector too.”',
+      '"Working with Fascinante Digital transformed our online presence. Lead generation increased by 40% in just three months."',
     name: 'Charolette Hanlin',
     role: 'Co-Founder, Heroes Digital',
     avatar: '/images/homepage/testimonials/1.webp',
   },
   {
     quote:
-      '“Payments are pivotal in our financial operations, serving as the primary interface between our finance department and clients.”',
+      '"Their data-driven approach to marketing helped us reach the right audience at the right time."',
     name: 'Novák Balázs',
     role: 'Co-Founder, WooCommerce',
     avatar: '/images/homepage/testimonials/2.webp',
   },
   {
     quote:
-      '“Using this financial app has made me feel more organized and efficient in managing my finances.”',
+      '"The team at Fascinante really understands digital marketing. Our conversion rates have never been higher."',
     name: 'Orosz Boldizsár',
     role: 'Founder, Okta',
     avatar: '/images/homepage/testimonials/3.webp',
   },
   {
     quote:
-      '“The provided features are incredibly helpful in tracking expenses, managing investments, and planning for future financial goals.”',
+      '"Their strategic approach to SEO and content marketing drove significant organic growth for our business."',
     name: 'Floyd Miles',
     role: 'Co-Founder, Slack',
     avatar: '/images/homepage/testimonials/4.webp',
   },
   {
     quote:
-      '“This app has given me full control over my finances and provided greater confidence in making wise financial decisions.”',
+      '"Professional, data-driven, and results-oriented. Exactly what we needed to scale our marketing."',
     name: 'Darrell Steward',
     role: 'Founder',
     avatar: '/images/homepage/testimonials/5.webp',
   },
   {
     quote:
-      '“Since incorporating this finance app into my daily routine, I’ve experienced a significant improvement in my financial management.”',
+      '"The ROI on our marketing campaigns improved dramatically after working with Fascinante Digital."',
     name: 'Devon Lane',
     role: 'Marketing, Google',
     avatar: '/images/homepage/testimonials/6.webp',
   },
   {
     quote:
-      '“We consolidated multiple payment tools into one platform—reporting and cash flow are finally clear.”',
+      '"We consolidated our marketing tools into one platform—reporting and analytics are finally clear."',
     name: 'Jenny Wilson',
     role: 'CFO, Mailchimp',
     avatar: '/images/homepage/testimonials/1.webp',
   },
   {
     quote:
-      '“The billing automation alone paid for the migration in under a month.”',
+      '"The marketing automation alone paid for the investment in under a month."',
     name: 'Jacob Jones',
     role: 'VP Ops, Notion',
     avatar: '/images/homepage/testimonials/2.webp',
   },
   {
     quote:
-      '“Metafi’s checkout improved conversion and cut our support tickets in half.”',
+      '"Their landing page optimization improved conversion and cut our acquisition costs in half."',
     name: 'Eleanor Pena',
     role: 'Head of Product, Square',
     avatar: '/images/homepage/testimonials/3.webp',
   },
   {
     quote:
-      '“Our finance team finally enjoys month-end. Reconciliation is effortless.”',
+      '"Our marketing team finally enjoys campaign reporting. Analytics are effortless now."',
     name: 'Courtney Henry',
-    role: 'Finance Lead, Spotify',
+    role: 'Marketing Lead, Spotify',
     avatar: '/images/homepage/testimonials/4.webp',
   },
   {
-    quote: '“The analytics gave us visibility we didn’t know we were missing.”',
+    quote: '"The audience insights gave us visibility we didn\'t know we were missing."',
     name: 'Leslie Alexander',
     role: 'Director, Airtable',
     avatar: '/images/homepage/testimonials/5.webp',
   },
   {
     quote:
-      '“From invoicing to recurring billing—everything lives in one place now.”',
+      '"From content marketing to paid ads—everything lives in one place now."',
     name: 'Guy Hawkins',
     role: 'Founder, Raycast',
     avatar: '/images/homepage/testimonials/6.webp',
@@ -134,16 +134,16 @@ export default function FascinanteTestimonials() {
     <section id="fascinante-testimonials" className="bg-accent px-6 lg:px-0">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-28">
         <p className="text-tagline mb-4 text-center text-sm leading-tight font-normal sm:text-base">
-          Our Customers
+          Testimonials
         </p>
 
         <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
           See What Our <br className="hidden sm:block" />
-          Customers Are Saying
+          Clients Say About Us
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base font-normal sm:text-lg">
-          Here&apos;s what some of our customers say about our platform.
+          Here&apos;s what some of our clients say about our marketing services and results.
         </p>
 
         <div className="relative mt-10 md:mt-14">
