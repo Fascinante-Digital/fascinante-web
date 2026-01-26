@@ -11,8 +11,8 @@ type TeamMember = {
 
 export default function FascinanteTeam({
   overline = 'Our Team',
-  title = "It's All About The People",
-  subtitle = 'Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas montes mauris. Auctor vitae neque urna nam nunc pellentesque.',
+  title = 'People Focused on Your Growth',
+  subtitle = 'Our team combines years of digital marketing expertise with a genuine passion for helping businesses succeed online.',
   members = DEFAULT_MEMBERS,
 }: {
   overline?: string;

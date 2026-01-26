@@ -17,12 +17,12 @@ type FascinanteAboutHeroProps = {
 
 export default function FascinanteAboutHero({
   overline = 'About Us',
-  title = 'Get to Know Fascinante Digital',
-  subtitle = 'Gateway to discovering the essence of our company and the comprehensive suite of financial solutions we offer.',
+  title = 'Meet the Team Behind Fascinante Digital',
+  subtitle = 'Discover the passionate team dedicated to helping your business grow through strategic digital marketing and proven results.',
   ctaHref = '/careers',
   ctaLabel = 'See Open Positions',
   imageSrc = '/images/about/hero.webp',
-  imageAlt = 'Fascinante team working together',
+  imageAlt = 'Fascinante Digital team working together',
 }: FascinanteAboutHeroProps) {
   return (
     <section id="fascinante-about-hero" className="bg-background px-6 lg:px-0">

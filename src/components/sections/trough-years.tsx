@@ -17,23 +17,23 @@ type FascinanteThroughYearsProps = {
 };
 
 const DEFAULT_PARAS = [
-  `Encapsulates our journey of growth, innovation, and unwavering dedication to our customers. Over the years, Fascinante Digital has evolved into a leading provider of financial solutions, constantly adapting to meet the ever-changing needs of businesses worldwide. Our success is not just measured in years but in the tangible impact we've made, backed by concrete data and statistics that validate our journey.`,
-  `With a proven track record of delivering results, Fascinante Digital stands as a testament to our commitment to excellence and continuous improvement. Our growth trajectory is marked by milestones, each supported by solid numbers that underscore our achievements and validate our position as a trusted partner in the financial industry.`,
+  `Our journey reflects years of dedication to helping businesses grow through strategic digital marketing. Since our founding, Fascinante Digital has helped countless clients achieve their marketing goals, adapting to the evolving digital landscape while maintaining our commitment to results.`,
+  `With a proven track record of delivering measurable outcomes, we continue to refine our strategies based on data and real-world results. Our growth is reflected in the success of our clients and the trust they place in us.`,
 ];
 
 const DEFAULT_STATS: Stat[] = [
-  { value: '2023', label: 'Launched' },
-  { value: '1500+', label: 'Team Members' },
-  { value: '131M', label: 'Pre-seed Round' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '500+', label: 'Clients Served' },
+  { value: '95%', label: 'Client Retention' },
 ];
 
 export default function FascinanteThroughYears({
-  overline = 'Fascinante Through The Years',
-  title = 'The Number to Back It Up',
+  overline = 'Our Journey',
+  title = 'Results That Support Our Strategy',
   paragraphs = DEFAULT_PARAS,
   stats = DEFAULT_STATS,
   imageSrc = '/images/about/years.webp',
-  imageAlt = 'Fascinante team meeting',
+  imageAlt = 'Fascinante Digital team collaborating',
 }: FascinanteThroughYearsProps) {
   return (
     <section id="fascinante-through-years" className="bg-background px-6 lg:px-0">
