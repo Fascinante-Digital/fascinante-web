@@ -37,7 +37,7 @@ export default function FeaturedPost({ post }: { post: BlogPost }) {
                     <span className="text-sm">•</span>
                     <span className="text-sm">
                       {post.date
-                        ? new Date(post.date).toLocaleDateString(undefined, {
+                        ? new Date(post.date).toLocaleDateString('en-US', {
                             month: 'short',
                             day: '2-digit',
                             year: 'numeric',

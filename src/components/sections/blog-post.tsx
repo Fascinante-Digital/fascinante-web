@@ -66,7 +66,7 @@ export default function FascinanteBlogPost({
                 {author && published && <span className="text-sm">•</span>}
                 {published && (
                   <span className="text-sm">
-                    {new Date(published).toLocaleDateString(undefined, {
+                    {new Date(published).toLocaleDateString('en-US', {
                       month: 'short',
                       day: '2-digit',
                       year: 'numeric',
