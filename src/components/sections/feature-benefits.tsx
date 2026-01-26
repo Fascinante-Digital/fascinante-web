@@ -11,25 +11,25 @@ type Benefit = {
 
 const BENEFITS: Benefit[] = [
   {
-    title: 'Collect More Revenue',
+    title: 'Generate More Leads',
     description:
-      'Maximize revenue collection with efficient strategies and streamlined processes.',
+      'Attract qualified prospects with targeted campaigns and optimized conversion funnels.',
     iconSrc: '/images/features/bar.svg',
-    iconAlt: 'Bar chart icon',
+    iconAlt: 'Lead generation icon',
   },
   {
-    title: 'Realtime Notifications',
+    title: 'Real-Time Analytics',
     description:
-      'Receive instant notifications in real-time for prompt updates and timely responses.',
+      'Track campaign performance in real-time with detailed analytics and insights.',
     iconSrc: '/images/features/bell.svg',
-    iconAlt: 'Notification bell icon',
+    iconAlt: 'Analytics icon',
   },
   {
-    title: 'Easy Management',
+    title: 'Easy Campaign Management',
     description:
-      'Get realtime updates when users start or end subscriptions, or have low funds in their wallet.',
+      'Manage all your marketing campaigns from a single, intuitive dashboard.',
     iconSrc: '/images/features/server.svg',
-    iconAlt: 'Controls icon',
+    iconAlt: 'Campaign management icon',
   },
 ];
 

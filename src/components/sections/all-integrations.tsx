@@ -15,65 +15,58 @@ type Integration = {
 
 const DEFAULT_ITEMS: Integration[] = [
   {
-    name: 'Mailchimps',
+    name: 'Mailchimp',
     description:
-      'Take control of your email design by using your own custom-coded HTML templates.',
+      'Automate your email marketing campaigns and sync subscriber data across platforms.',
     icon: '/images/homepage/integrations/mailchimp.svg',
     href: '#',
   },
   {
-    name: 'Zapier integration',
+    name: 'Zapier',
     description:
-      'Connect Apps and Automate Workflows with Zapier — No Coding Required.',
+      'Connect apps and automate workflows without writing any code.',
     icon: '/images/homepage/integrations/zapier.svg',
     href: '#',
   },
   {
-    name: 'Stripe integration',
+    name: 'Stripe',
     description:
-      'Work faster and smarter by integrating directly with Notion, right in the app.',
+      'Accept payments securely and sync billing data with your marketing analytics.',
     icon: '/images/homepage/integrations/stripe.svg',
     href: '#',
   },
   {
-    name: 'Shopify integration',
+    name: 'Shopify',
     description:
-      'Scale your entire business with the best ranked commerce platform',
+      'Sync e-commerce data with your marketing campaigns for better targeting.',
     icon: '/images/homepage/integrations/shopify.svg',
     href: '#',
   },
   {
     name: 'Intercom',
     description:
-      'AI-first customer service solution, giving exceptional experiences for support teams',
+      'Connect customer conversations with your marketing automation workflows.',
     icon: '/images/homepage/integrations/intercom.svg',
     href: '#',
   },
   {
-    name: 'OK',
+    name: 'Google Analytics',
     description:
-      'Hendrerit fames metus leo ut orci pretium. Sit vitae montes egestas montes mauris.',
-    icon: '/images/homepage/integrations/ok.svg',
-    href: '#',
-  },
-  {
-    name: 'Okta integration',
-    description:
-      'Scale & flexibility with the broadest & deepest set of integrations',
-    icon: '/images/homepage/integrations/okta.svg',
-    href: '#',
-  },
-  {
-    name: 'Google SSO',
-    description:
-      'Comprehensive tools to connect applications (Google Cloud and others).',
+      'Track website performance and sync conversion data with your marketing tools.',
     icon: '/images/homepage/integrations/google.svg',
     href: '#',
   },
   {
-    name: 'Slack integration',
+    name: 'Okta',
     description:
-      'With Metafi’s integration for Slack, your team can seamlessly send messages to a Metafi database',
+      'Enterprise-grade security for your marketing team accounts and access management.',
+    icon: '/images/homepage/integrations/okta.svg',
+    href: '#',
+  },
+  {
+    name: 'Slack',
+    description:
+      'Get real-time marketing notifications and alerts in your team channels.',
     icon: '/images/homepage/integrations/slack.svg',
     href: '#',
   },
@@ -81,7 +74,7 @@ const DEFAULT_ITEMS: Integration[] = [
 
 export default function FascinanteAllIntegrations({
   items = DEFAULT_ITEMS,
-  title = 'All Integrations',
+  title = 'All Marketing Integrations',
   pageSize = 9,
 }: {
   items?: Integration[];

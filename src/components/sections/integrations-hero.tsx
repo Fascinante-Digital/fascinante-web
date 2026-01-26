@@ -16,8 +16,8 @@ type FascinanteIntegrationsHeroProps = {
 
 export default function FascinanteIntegrationsHero({
   overline = 'Integrations',
-  title = 'Integrations Tool You Use to Run Your Business',
-  description = 'Effortlessly integrate essential tools into your business operations, ensuring seamless functionality and enhanced efficiency',
+  title = 'Marketing Tools We Integrate With',
+  description = 'Connect your favorite marketing platforms and automate workflows. Sync data across your marketing stack for better insights and results.',
   primaryCtaHref = '/pricing',
   primaryCtaLabel = 'Get Started',
   secondaryCtaHref = '/contact',

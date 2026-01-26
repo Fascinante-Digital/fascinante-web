@@ -17,13 +17,13 @@ type FeaturesHeroProps = {
 };
 
 export default function FascinanteFeaturesHero({
-  overline = 'Recurring Billing',
-  title = 'Recurring Billing for Your Businesses',
-  description = `Simple recurring billing to usage-based billing and sales-negotiated contracts. Collect and retain more revenue, automate revenue management workflows, and accept payments globally.`,
+  overline = 'Our Services',
+  title = 'Digital Marketing Solutions for Your Business',
+  description = `Strategic marketing services designed to grow your online presence, attract qualified leads, and convert visitors into loyal customers.`,
   primaryCtaHref = '/pricing',
   primaryCtaLabel = 'Get Started',
   secondaryCtaHref = '/contact',
-  secondaryCtaLabel = 'Contact Sales',
+  secondaryCtaLabel = 'Contact Us',
   imageSrc = '/images/features/feature.webp',
 }: FeaturesHeroProps) {
   return (
@@ -63,7 +63,7 @@ export default function FascinanteFeaturesHero({
               <div className="border-border-light shadow-soft relative aspect-[10/9] w-full max-w-[1000px] overflow-hidden rounded-[16px] border bg-white lg:w-[500px]">
                 <Image
                   src={imageSrc}
-                  alt="Pricing plans UI preview"
+                  alt="Digital marketing services preview"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 500px"
