@@ -16,9 +16,9 @@ export default function NotFound() {
 
       <div className="relative container flex flex-col items-center justify-center px-4 py-24 text-center sm:py-32 md:py-44">
         <div className="mx-auto max-w-2xl">
-          <h1 className="text-tagline mb-3 text-sm font-medium tracking-wide uppercase">
+          <span className="text-tagline mb-3 text-sm font-medium tracking-wide uppercase">
             Oops!
-          </h1>
+          </span>
 
           <h2 className="text-foreground text-[80px] leading-none font-semibold sm:text-[120px] md:text-[160px]">
             404

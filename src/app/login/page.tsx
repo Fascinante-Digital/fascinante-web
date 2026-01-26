@@ -27,7 +27,7 @@ const Login = () => {
             />
           </div>
 
-          <h1 className="text-foreground text-2xl font-medium tracking-tight sm:text-3xl">
+          <h1 className="text-foreground text-h1 font-medium tracking-tight">
             Sign in to your account
           </h1>
           <p className="text-muted-foreground mx-auto mt-2 max-w-md text-sm">

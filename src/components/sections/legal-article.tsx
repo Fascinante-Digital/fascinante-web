@@ -22,7 +22,7 @@ export default function LegalArticle({
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
         <div className="bg-features-hero px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
           <p className="text-tagline text-sm sm:text-base">{overline}</p>
-          <h1 className="text-foreground mt-4 text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+          <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight">
             {title}
           </h1>
           {subtitle && (
