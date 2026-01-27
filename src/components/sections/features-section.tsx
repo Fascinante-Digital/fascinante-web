@@ -28,11 +28,11 @@ export default function FascinanteFeaturesHero({
   imageSrc = '/images/features/feature.webp',
 }: FeaturesHeroProps) {
   return (
-    <section id="fascinante-features-hero" className="bg-background px-6 lg:px-0">
-      <div className="container px-0 md:px-6">
-        <div className="bg-features-hero relative overflow-hidden">
-          <div className="grid items-center gap-8 p-6 sm:p-8 md:gap-12 md:p-12 lg:grid-cols-2">
-            <div className="max-w-xl">
+    <section id="fascinante-features-hero" className="bg-features-hero px-6">
+      <div className="container px-0">
+        <div className="relative overflow-hidden content-center">
+          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 justify-items-start pt-6 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 pl-0 pr-0 content-center">
+            <div className="max-w-xl pl-0 text-left">
               <Badge align="left">{overline}</Badge>
 
               <h1 className="text-foreground text-h1 tracking-tight font-medium">
@@ -58,8 +58,8 @@ export default function FascinanteFeaturesHero({
               </div>
             </div>
 
-            <div className="relative flex justify-center">
-              <div className="border-border-light shadow-soft relative aspect-[10/9] w-full max-w-[1000px] overflow-hidden rounded-[16px] border bg-white lg:w-[500px]">
+            <div className="relative flex justify-end w-full">
+              <div className="border-border-light shadow-soft relative aspect-[10/9] overflow-hidden rounded-[16px] border bg-white lg:w-[500px] w-full">
                 <Image
                   src={imageSrc}
                   alt="Digital marketing services preview"
