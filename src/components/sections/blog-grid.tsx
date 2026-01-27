@@ -72,7 +72,7 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
 
   return (
     <section className="px-6 py-10 lg:py-16">
-      <div className="container grid gap-8 px-0 lg:grid-cols-[260px_minmax(0,1fr)]">
+        <div className="container grid gap-8 px-0 lg:grid-cols-[260px_minmax(0,1fr)]">
         {/* Sidebar */}
         <aside className="space-y-4">
           <h3 className="text-muted-foreground text-sm font-medium">

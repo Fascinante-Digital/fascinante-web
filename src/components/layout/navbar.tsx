@@ -77,8 +77,8 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-background border-border relative z-50 h-20 border-b px-2.5 lg:px-0">
-      <div className="container flex h-20 items-center justify-between lg:grid lg:grid-cols-[auto_1fr_auto]">
+    <header className="bg-background border-border relative z-50 h-20 border-b px-6">
+      <div className="container flex h-20 items-center justify-between px-0 lg:grid lg:grid-cols-[auto_1fr_auto]">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/layout/logo.svg"
