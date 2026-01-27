@@ -27,7 +27,7 @@ const FascinanteHero = () => {
       </div>
 
       <div className="relative container px-0 md:px-6">
-        <div className="mx-auto grid max-w-4xl gap-6 py-14 text-center sm:py-16 md:gap-8 md:pt-24 md:pb-20">
+        <div className="mx-auto grid max-w-4xl gap-6 p-6 sm:p-8 md:gap-8 md:p-12">
           <Badge align="center">Digital Marketing</Badge>
           <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance">
             Digital Marketing That Grows Your Business
