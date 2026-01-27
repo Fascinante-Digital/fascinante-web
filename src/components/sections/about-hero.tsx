@@ -39,7 +39,7 @@ export default function FascinanteAboutHero({
             {subtitle}
           </p>
 
-          <div className="mt-2 flex w-full">
+          <div className="mt-2 flex w-full justify-center">
             <Button
               asChild
               className="w-full sm:w-auto"
