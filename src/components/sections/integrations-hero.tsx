@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import Badge from '@/components/ui/badge';
 
 type FascinanteIntegrationsHeroProps = {
   overline?: string;
@@ -29,27 +30,33 @@ export default function FascinanteIntegrationsHero({
       className="bg-features-hero px-6"
     >
       <div className="container px-0">
-        <div className="relative overflow-hidden">
-          <div className="mx-auto max-w-5xl text-center py-16 sm:py-20 md:py-24">
-            <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
+        <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4 pt-8 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 content-center">
+          <Badge align="left" className="sm:text-center">{overline}</Badge>
 
-            <h1 className="text-foreground mx-auto max-w-2xl text-h1 font-medium tracking-tight text-balance">
-              {title}
-            </h1>
+          <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance text-left sm:text-center">
+            {title}
+          </h1>
 
-            <p className="text-muted-foreground mx-auto mt-5 max-w-2xl text-base sm:text-lg">
-              {description}
-            </p>
+          <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-base sm:text-lg text-left sm:text-center">
+            {description}
+          </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
-              <Button asChild className="w-full sm:w-auto">
-                <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
-              </Button>
-
-              <Button asChild variant="outline" className="w-full sm:w-auto">
-                <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
-              </Button>
-            </div>
+          <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 w-full">
+            <Button
+              asChild
+              className="w-full sm:w-auto"
+              aria-label={primaryCtaLabel}
+            >
+              <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="w-full sm:w-auto"
+              aria-label={secondaryCtaLabel}
+            >
+              <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
+            </Button>
           </div>
         </div>
 
