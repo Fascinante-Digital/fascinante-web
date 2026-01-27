@@ -36,14 +36,14 @@ export default function BlogPage() {
       <section className="bg-background px-6 lg:px-0">
         <div className="container px-0 md:px-6">
           <div className="bg-features-hero relative overflow-hidden">
-            <div className="mx-auto max-w-4xl px-6 py-14 text-center sm:px-8 sm:py-18 md:py-20">
+            <div className="px-6 py-14 sm:px-8 sm:py-18 md:py-20">
               <p className="text-tagline text-sm sm:text-base">Our Blog</p>
 
-              <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight text-balance">
+              <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight">
                 Digital Marketing Insights & Strategies
               </h1>
 
-              <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base sm:text-lg">
+              <p className="text-muted-foreground mt-4 max-w-2xl text-base sm:text-lg">
                 Expert advice, proven strategies, and actionable tips to grow your business online.
               </p>
             </div>
