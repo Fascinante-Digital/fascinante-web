@@ -31,7 +31,7 @@ export default function FascinanteFeaturesHero({
     <section id="fascinante-features-hero" className="bg-features-hero px-6">
       <div className="container px-0">
         <div className="relative overflow-hidden content-center">
-          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 justify-items-start pt-6 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 pl-0 pr-0 content-center">
+          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 justify-items-start pt-8 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 pl-0 pr-0 content-center">
             <div className="max-w-xl pl-0 text-left">
               <Badge align="left">{overline}</Badge>
 

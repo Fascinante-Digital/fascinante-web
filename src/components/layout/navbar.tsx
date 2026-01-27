@@ -179,15 +179,15 @@ const Navbar = () => {
             {/* keep content aligned with your layout while background is full-bleed */}
             <div className="container px-2.5">
               <div className="px-5">
-                <nav
-                  className={cn(
-                    'mt-6 flex flex-col',
-                    'transition-[transform,opacity] duration-300',
-                    isMenuOpen
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-2 opacity-0',
-                  )}
-                >
+                  <nav
+                    className={cn(
+                      'mt-8 flex flex-col',
+                      'transition-[transform,opacity] duration-300',
+                      isMenuOpen
+                        ? 'translate-y-0 opacity-100'
+                        : 'translate-y-2 opacity-0',
+                    )}
+                  >
                   <div className="flex flex-col gap-6">
                     {ITEMS.map((link) => (
                       <Link
