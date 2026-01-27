@@ -26,11 +26,11 @@ export default function FascinanteIntegrationsHero({
   return (
     <section
       id="fascinante-integrations-hero"
-      className="bg-background px-6 lg:px-0"
+      className="bg-features-hero px-6"
     >
-      <div className="container px-0 md:px-6">
-        <div className="bg-features-hero relative overflow-hidden">
-          <div className="mx-auto max-w-5xl px-6 py-16 text-center sm:px-8 sm:py-20 md:py-24">
+      <div className="container px-0">
+        <div className="relative overflow-hidden">
+          <div className="mx-auto max-w-5xl text-center py-16 sm:py-20 md:py-24">
             <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
 
             <h1 className="text-foreground mx-auto max-w-2xl text-h1 font-medium tracking-tight text-balance">
