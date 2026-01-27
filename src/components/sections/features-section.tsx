@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import Badge from '@/components/ui/badge';
 
 type FeaturesHeroProps = {
   overline?: string;
@@ -32,9 +33,7 @@ export default function FascinanteFeaturesHero({
         <div className="bg-features-hero relative overflow-hidden">
           <div className="grid items-center gap-8 p-6 sm:p-8 md:gap-12 md:p-12 lg:grid-cols-2">
             <div className="max-w-xl">
-              <p className="text-tagline mb-2 text-sm sm:text-base">
-                {overline}
-              </p>
+              <Badge align="left">{overline}</Badge>
 
               <h1 className="text-foreground text-h1 tracking-tight font-medium">
                 {title.split('\n').map((line, i) => (

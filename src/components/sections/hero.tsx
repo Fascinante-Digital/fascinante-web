@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import Badge from '@/components/ui/badge';
 
 import { GridBackground } from '../ui/grid-background';
 
@@ -27,6 +28,7 @@ const FascinanteHero = () => {
 
       <div className="relative container px-0 md:px-6">
         <div className="mx-auto grid max-w-4xl gap-6 py-14 text-center sm:py-16 md:gap-8 md:pt-24 md:pb-20">
+          <Badge align="center">Digital Marketing</Badge>
           <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance">
             Digital Marketing That Grows Your Business
           </h1>
