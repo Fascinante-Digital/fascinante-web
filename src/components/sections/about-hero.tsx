@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import Badge from '@/components/ui/badge';
 
 type FascinanteAboutHeroProps = {
   overline?: string;
@@ -25,39 +26,41 @@ export default function FascinanteAboutHero({
   imageAlt = 'Fascinante Digital team working together',
 }: FascinanteAboutHeroProps) {
   return (
-    <section id="fascinante-about-hero" className="bg-background px-6 lg:px-0">
-      <div className="container px-0 md:px-6">
-        <div className="bg-features-hero relative overflow-hidden">
-          <div className="mx-auto max-w-4xl px-6 py-14 text-center sm:px-8 sm:py-18 md:py-20">
-            <p className="text-tagline text-sm sm:text-base">{overline}</p>
+    <section id="fascinante-about-hero" className="bg-background px-6">
+      <div className="container px-0">
+        <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4 pt-8 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 content-center">
+          <Badge align="left" className="sm:text-center">{overline}</Badge>
 
-            <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight text-balance">
-              {title}
-            </h1>
+          <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance text-left sm:text-center">
+            {title}
+          </h1>
 
-            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base sm:text-lg">
-              {subtitle}
-            </p>
+          <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-base sm:text-lg text-left sm:text-center">
+            {subtitle}
+          </p>
 
-            <div className="mt-8">
-              <Button asChild className="w-full sm:w-auto">
-                <Link href={ctaHref}>{ctaLabel}</Link>
-              </Button>
-            </div>
+          <div className="mt-2 flex w-full">
+            <Button
+              asChild
+              className="w-full sm:w-auto"
+              aria-label={ctaLabel}
+            >
+              <Link href={ctaHref}>{ctaLabel}</Link>
+            </Button>
           </div>
+        </div>
 
-          <div className="px-6 sm:px-8">
-            <div className="border-border-light shadow-light bg-card mx-auto max-w-5xl overflow-hidden rounded-t-sm border md:rounded-t-[12px]">
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                width={2400}
-                height={1400}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 1200px"
-                priority={false}
-              />
-            </div>
+        <div className="px-6 sm:px-8">
+          <div className="border-border-light shadow-light bg-card mx-auto max-w-5xl overflow-hidden rounded-t-sm border md:rounded-t-[12px]">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={2400}
+              height={1400}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              priority={false}
+            />
           </div>
         </div>
 
