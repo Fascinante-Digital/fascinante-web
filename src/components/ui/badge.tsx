@@ -16,7 +16,7 @@ export default function Badge({ children, align = 'left', className = '' }: Badg
   };
 
   return (
-    <p className={`text-tagline text-sm sm:text-base ${alignmentClasses[align]} ${className}`}>
+    <p className={`text-tagline text-sm sm:text-base mb-4 ${alignmentClasses[align]} ${className}`}>
       {children}
     </p>
   );
