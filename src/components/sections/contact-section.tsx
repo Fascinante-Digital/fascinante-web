@@ -13,40 +13,89 @@ export default function FascinanteContact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>(
     'idle'
   );
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (status === 'loading') {
+      return;
+    }
+
+    setErrorMessage(null);
     setStatus('loading');
 
     const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
     if (!apiBase) {
+      setErrorMessage('No pudimos enviar tu mensaje. Intenta de nuevo.');
       setStatus('error');
       return;
     }
+
+    const trimmedName = fullName.trim();
+    const trimmedEmail = email.trim();
+    const trimmedSubject = subject.trim();
+    const trimmedMessage = message.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
+      setErrorMessage('Completa los campos obligatorios para continuar.');
+      setStatus('error');
+      return;
+    }
+
+    if (!emailRegex.test(trimmedEmail)) {
+      setErrorMessage('Ingresa un email válido.');
+      setStatus('error');
+      return;
+    }
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 10000);
 
     try {
       const response = await fetch(`${apiBase}/emails/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
         body: JSON.stringify({
-          name: fullName,
-          email,
-          message: subject ? `${subject}\n\n${message}` : message,
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedSubject
+            ? `${trimmedSubject}\n\n${trimmedMessage}`
+            : trimmedMessage,
           source: 'web-contact',
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Request failed');
+        if (response.status === 429) {
+          setErrorMessage(
+            'Hiciste demasiadas solicitudes. Intenta de nuevo en unos minutos.'
+          );
+        } else if (response.status >= 500) {
+          setErrorMessage('No pudimos enviar tu mensaje. Intenta de nuevo.');
+        } else {
+          setErrorMessage('Revisa los datos e intenta de nuevo.');
+        }
+        setStatus('error');
+        return;
       }
 
       setStatus('success');
+      setErrorMessage(null);
       setFullName('');
       setEmail('');
       setSubject('');
       setMessage('');
     } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        setErrorMessage('La solicitud tardó demasiado. Intenta de nuevo.');
+      } else {
+        setErrorMessage('No pudimos enviar tu mensaje. Intenta de nuevo.');
+      }
       setStatus('error');
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   };
 
@@ -154,7 +203,7 @@ export default function FascinanteContact() {
               ) : null}
               {status === 'error' ? (
                 <p className="text-center text-sm text-red-600">
-                  No pudimos enviar tu mensaje. Intenta de nuevo.
+                  {errorMessage || 'No pudimos enviar tu mensaje. Intenta de nuevo.'}
                 </p>
               ) : null}
             </form>
