@@ -1,10 +1,55 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 export default function FascinanteContact() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>(
+    'idle'
+  );
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus('loading');
+
+    const apiBase = process.env.NEXT_PUBLIC_API_BASE_URL;
+    if (!apiBase) {
+      setStatus('error');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBase}/emails/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fullName,
+          email,
+          message: subject ? `${subject}\n\n${message}` : message,
+          source: 'web-contact',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      setStatus('success');
+      setFullName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section
       id="fascinante-contact"
@@ -29,7 +74,7 @@ export default function FascinanteContact() {
               Speak to us
             </h3>
 
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="fullName"
@@ -41,6 +86,8 @@ export default function FascinanteContact() {
                   id="fullName"
                   placeholder="John Doe"
                   className="h-11 rounded-[8px]"
+                  value={fullName}
+                  onChange={(event) => setFullName(event.target.value)}
                 />
               </div>
 
@@ -56,6 +103,8 @@ export default function FascinanteContact() {
                   type="email"
                   placeholder="johndoe@mail.com"
                   className="h-11 rounded-[8px]"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
               </div>
 
@@ -70,6 +119,8 @@ export default function FascinanteContact() {
                   id="subject"
                   placeholder="Create a subject..."
                   className="h-11 rounded-[8px]"
+                  value={subject}
+                  onChange={(event) => setSubject(event.target.value)}
                 />
               </div>
 
@@ -84,15 +135,28 @@ export default function FascinanteContact() {
                   id="message"
                   placeholder="Enter your message..."
                   className="min-h-[150px] resize-y rounded-[8px]"
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
                 />
               </div>
 
               <Button
                 type="submit"
                 className="bg-foreground text-primary-foreground hover:bg-foreground/90 mt-2 h-12 w-full rounded-[8px]"
+                disabled={status === 'loading'}
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </Button>
+              {status === 'success' ? (
+                <p className="text-center text-sm text-emerald-600">
+                  Mensaje enviado correctamente.
+                </p>
+              ) : null}
+              {status === 'error' ? (
+                <p className="text-center text-sm text-red-600">
+                  No pudimos enviar tu mensaje. Intenta de nuevo.
+                </p>
+              ) : null}
             </form>
           </div>
         </div>
