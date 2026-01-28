@@ -21,7 +21,7 @@ export default function FascinanteTeam({
   members?: TeamMember[];
 }) {
   return (
-    <section id="fascinante-team" className="bg-accent px-6 lg:px-0">
+    <section id="fascinante-team" className="bg-accent px-6">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
         <div className="text-center">
           <p className="text-tagline text-sm sm:text-base">{overline}</p>

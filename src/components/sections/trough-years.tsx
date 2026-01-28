@@ -36,7 +36,7 @@ export default function FascinanteThroughYears({
   imageAlt = 'Fascinante Digital team collaborating',
 }: FascinanteThroughYearsProps) {
   return (
-    <section id="fascinante-through-years" className="bg-background px-6 lg:px-0">
+    <section id="fascinante-through-years" className="bg-background px-6">
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,560px)] lg:gap-16">
           <div>

@@ -28,7 +28,7 @@ export default function FascinantePartnerLogos({
     'brightness-0 contrast-[90%] hue-rotate-[190deg] invert-[0.43] saturate-[180%] sepia-[0.06]';
 
   return (
-    <section id="fascinante-partner-logos" className="bg-background px-6 lg:px-0">
+    <section id="fascinante-partner-logos" className="bg-background px-6">
       <div className="container px-0 py-10 sm:py-12 md:px-6 md:py-16">
         <ul className="grid grid-cols-5 gap-x-8 gap-y-6 sm:gap-x-10 md:gap-x-16 md:gap-y-10">
           {list.map((item, i) => (
