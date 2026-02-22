@@ -9,8 +9,8 @@ export default function Page() {
     <LegalArticle
       overline="Legal"
       title="Privacy Policy"
-      subtitle="How we collect, use, and protect your information when you use Metafi."
-      updatedAt="Updated Oct 2025"
+      subtitle="How Fascinante Digital collects, uses, and protects your information."
+      updatedAt="Updated Feb 2026"
     >
       <Privacy />
     </LegalArticle>
