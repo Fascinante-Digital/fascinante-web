@@ -10,7 +10,7 @@ export default function Page() {
       overline="Legal"
       title="Terms of Service"
       subtitle="These terms govern your use of Fascinante Digital's services and website."
-      updatedAt="Updated Jan 2026"
+      updatedAt="Updated Feb 2026"
     >
       <Terms />
     </LegalArticle>
