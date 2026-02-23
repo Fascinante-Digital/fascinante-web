@@ -41,6 +41,7 @@ Manage environment variables in Vercel using three standard environments:
 
 Public website variables used by this project:
 
+- `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_API_BASE_URL`
 - `NEXT_PUBLIC_AUTH_LOGIN_URL`
 - `NEXT_PUBLIC_AUTH_SIGNUP_URL`
