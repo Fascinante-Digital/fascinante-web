@@ -221,6 +221,7 @@ export default function FascinanteBlogGrid({
               <div className="flex gap-3">
                 <Button
                   variant="secondary"
+                  className="!h-9 !gap-1.5 !rounded-md !px-2.5 !text-sm !font-medium"
                   disabled={page <= 1}
                   onClick={goPrev}
                 >

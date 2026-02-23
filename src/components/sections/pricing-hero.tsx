@@ -243,12 +243,11 @@ export default function FascinantePricingHero() {
                     <div className="lg:col-span-2">
                       <Button
                         asChild
-                        variant={plan.highlight ? 'default' : 'marketing'}
+                        variant="marketing"
                         className={cn(
                           'w-full',
-                          plan.highlight && 'h-12 rounded-[12px]',
                           plan.highlight &&
-                            'bg-primary-foreground text-tagline hover:bg-primary-foreground/90',
+                            '!bg-primary-foreground !text-tagline hover:!bg-primary-foreground/90',
                         )}
                       >
                         <Link href={plan.ctaHref ?? '#'}>{plan.ctaLabel}</Link>
