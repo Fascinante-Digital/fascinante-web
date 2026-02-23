@@ -1,8 +1,27 @@
-'use client';
+import type { Metadata } from 'next';
 
 import LegalArticle from '@/components/sections/legal-article';
+import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 import CookiePolicy from './cookie-policy.mdx';
+
+const description =
+  'Understand what cookies Fascinante Digital uses, why we use them, and how you can manage cookie preferences.';
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description,
+  alternates: {
+    canonical: '/cookie-policy',
+  },
+  openGraph: {
+    type: 'website',
+    url: toAbsoluteUrl('/cookie-policy'),
+    title: `Cookie Policy | ${siteConfig.name}`,
+    description,
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+};
 
 export default function Page() {
   return (
