@@ -165,8 +165,8 @@
   --shadow-light: var(--shadow-light);
 
   /* Typography - Mobile default (30px H1) */
-  --text-h1: 30px;
-  --leading-h1: 40px;
+  --text-h1: 28px;
+  --leading-h1: 36px;
   --text-h2: 26px;
   --leading-h2: 34px;
   --text-h3: 22px;
@@ -230,8 +230,8 @@
 
 /* Typography Utility Classes - Consistent across all headings */
 @utility text-h1 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 36px;
 }
 
 @utility text-h2 {

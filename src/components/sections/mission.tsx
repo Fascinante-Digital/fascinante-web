@@ -18,7 +18,7 @@ export default function FascinanteMission({
       <div className="container px-0 py-12 sm:py-16 md:px-6 md:py-20">
         <p className="text-tagline text-sm sm:text-base">{overline}</p>
 
-        <h2 className="text-foreground mt-4 text-h2 font-medium tracking-tight text-balance">
+        <h2 className="text-foreground text-h2 mt-4 font-semibold tracking-tighter text-balance">
           <span>{primary} </span>
           <span className="text-muted-foreground">{secondary}</span>
         </h2>

@@ -90,14 +90,15 @@ const FascinanteFeatures = () => {
           Features
         </p>
 
-        <h2 className="text-foreground mx-auto max-w-3xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto max-w-3xl text-center text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
           Everything You Need to <br className="hidden sm:block" />
           Grow Online
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base sm:text-lg">
-          All the tools and strategies to attract, convert, and retain customers.
-          Scale your digital presence with our comprehensive marketing solutions.
+          All the tools and strategies to attract, convert, and retain
+          customers. Scale your digital presence with our comprehensive
+          marketing solutions.
         </p>
 
         <div className="mt-12 flex flex-col gap-6 md:mt-14 md:gap-8 lg:flex-row">

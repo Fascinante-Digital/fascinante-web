@@ -20,13 +20,16 @@ export default function FascinanteFeaturePricing({
   imageAlt = 'Billing form UI preview',
 }: FascinanteFeaturePricingProps) {
   return (
-    <section id="fascinante-feature-pricing" className="bg-background px-6 lg:px-0">
+    <section
+      id="fascinante-feature-pricing"
+      className="bg-background px-6 lg:px-0"
+    >
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
         <div className="grid items-center gap-10 md:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,500px)]">
           <div className="max-w-xl">
             <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
 
-            <h2 className="text-foreground text-h2 font-medium tracking-tight">
+            <h2 className="text-foreground text-h2 font-semibold tracking-tighter">
               {title}
             </h2>
 
