@@ -1,179 +1,57 @@
-'use client';
-
-import { Eye, EyeOff, Facebook } from 'lucide-react';
-import Image from 'next/image';
-import { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
+import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { isPublicUrlConfigured, publicAuthUrls } from '@/lib/public-env';
 
-const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
+export default function SignupPage() {
+  const signupHref = publicAuthUrls.signup;
+  const loginHref = publicAuthUrls.login;
+  const signupConfigured = isPublicUrlConfigured(signupHref);
+  const loginConfigured = isPublicUrlConfigured(loginHref);
 
   return (
-    <section id="metafi-login" className="bg-background px-6 lg:px-0">
+    <section id="fascinante-signup" className="bg-background px-6 lg:px-0">
       <div className="container px-0 py-16 md:px-6">
-        <div className="bg-features-hero rounded-[16px] px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
-          <div className="mb-4 flex size-12 w-full items-center justify-center rounded-full sm:mb-5">
-            <Image
-              src="/images/layout/logo-single.svg"
-              alt="Fascinante Digital logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
-              priority
-            />
-          </div>
-
-          <h1 className="text-foreground text-h1 font-medium tracking-tight">
-            Sign up to your account
+        <div className="bg-features-hero mx-auto max-w-2xl rounded-[16px] px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
+          <p className="text-tagline text-sm">Account Access</p>
+          <h1 className="text-foreground text-h1 mt-3 font-medium tracking-tight">
+            Create your account
           </h1>
-          <p className="text-muted-foreground mx-auto mt-2 max-w-md text-sm">
-            Welcome back! Please enter your details
+          <p className="text-muted-foreground mx-auto mt-3 max-w-lg text-sm sm:text-base">
+            Account registration is handled by our secure authentication
+            provider. Continue to the sign up portal.
           </p>
 
-          <Card className="border-border-light shadow-light bg-card mx-auto mt-6 w-full max-w-md rounded-[12px] border text-left sm:mt-8">
-            <CardHeader className="pb-0"></CardHeader>
-            <CardContent className="pt-6">
-              <form className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="text-muted-foreground mb-2 block text-sm"
-                  >
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="johndoe@mail.com"
-                    className="h-11 rounded-[8px]"
-                    required
-                  />
-                </div>
+          <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3">
+            {signupConfigured ? (
+              <Button asChild className="h-11 w-full rounded-[8px]">
+                <Link href={signupHref}>Continue to Sign Up</Link>
+              </Button>
+            ) : (
+              <Button className="h-11 w-full rounded-[8px]" disabled>
+                Sign Up Temporarily Unavailable
+              </Button>
+            )}
 
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="text-muted-foreground mb-2 block text-sm"
-                  >
-                    Password
-                  </label>
-                  <div className="relative">
-                    <Input
-                      id="password"
-                      type={showPassword ? 'text' : 'password'}
-                      placeholder="Password"
-                      className="h-11 rounded-[8px] pr-10"
-                      required
-                    />
-                    <button
-                      type="button"
-                      aria-label={
-                        showPassword ? 'Hide password' : 'Show password'
-                      }
-                      className="text-muted-foreground/80 hover:text-foreground absolute top-1/2 right-2 -translate-y-1/2 rounded p-1"
-                      onClick={() => setShowPassword((s) => !s)}
-                    >
-                      {showPassword ? (
-                        <EyeOff className="size-4" />
-                      ) : (
-                        <Eye className="size-4" />
-                      )}
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="repeat-password"
-                    className="text-muted-foreground mb-2 block text-sm"
-                  >
-                    Repeat Password
-                  </label>
-                  <div className="relative">
-                    <Input
-                      id="repeat-password"
-                      type={showPassword ? 'text' : 'password'}
-                      placeholder="Repeat Password"
-                      className="h-11 rounded-[8px] pr-10"
-                      required
-                    />
-                    <button
-                      type="button"
-                      aria-label={
-                        showPassword ? 'Hide password' : 'Show password'
-                      }
-                      className="text-muted-foreground/80 hover:text-foreground absolute top-1/2 right-2 -translate-y-1/2 rounded p-1"
-                      onClick={() => setShowPassword((s) => !s)}
-                    >
-                      {showPassword ? (
-                        <EyeOff className="size-4" />
-                      ) : (
-                        <Eye className="size-4" />
-                      )}
-                    </button>
-                  </div>
-                </div>
+            {loginConfigured ? (
+              <Button
+                asChild
+                variant="outline"
+                className="h-11 w-full rounded-[8px]"
+              >
+                <Link href={loginHref}>Already have an account? Sign In</Link>
+              </Button>
+            ) : null}
+          </div>
 
-                <div className="-mt-1">
-                  <a
-                    href="/forgot-password"
-                    className="text-tagline text-sm hover:underline"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
-
-                <Button
-                  type="submit"
-                  className="bg-foreground text-primary-foreground hover:bg-foreground/90 h-11 w-full rounded-[8px]"
-                >
-                  Sign up
-                </Button>
-
-                <div className="my-2 flex items-center">
-                  <span className="bg-border/70 h-px flex-1" />
-                  <span className="text-muted-foreground mx-3 text-xs whitespace-nowrap">
-                    Or Sign up with
-                  </span>
-                  <span className="bg-border/70 h-px flex-1" />
-                </div>
-
-                <div className="mt-4 space-y-3">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="h-11 w-full justify-center rounded-[8px] font-medium"
-                  >
-                    <FcGoogle className="mr-2 size-5" />
-                    Sign up with Google
-                  </Button>
-
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="h-11 w-full justify-center rounded-[8px] font-medium"
-                  >
-                    <Facebook className="mr-2 size-5" />
-                    Sign up with Facebook
-                  </Button>
-                </div>
-              </form>
-
-              <p className="text-muted-foreground mt-6 text-center text-sm">
-                Don’t have an account?{' '}
-                <a href="/signup" className="text-tagline hover:underline">
-                  Sign Up
-                </a>
-              </p>
-            </CardContent>
-          </Card>
+          {!signupConfigured ? (
+            <p className="text-muted-foreground mt-5 text-xs">
+              Configure `NEXT_PUBLIC_AUTH_SIGNUP_URL` in Vercel to enable this
+              action.
+            </p>
+          ) : null}
         </div>
       </div>
     </section>
   );
-};
-
-export default Signup;
+}

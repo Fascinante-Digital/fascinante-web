@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { isPublicUrlConfigured, publicAuthUrls } from '@/lib/public-env';
 import { cn } from '@/lib/utils';
 
 import { ThemeToggle } from '../ui/theme-toggle';
@@ -15,6 +16,8 @@ const HEADER_HEIGHT = 80;
 const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const loginHref = publicAuthUrls.login;
+  const loginEnabled = isPublicUrlConfigured(loginHref);
 
   useEffect(() => {
     document.body.classList.toggle('overflow-hidden', isMenuOpen);
@@ -106,11 +109,22 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-2.5">
-          <Link href="/login" className={cn('hidden sm:block lg:block')}>
-            <Button size="sm" variant="outline">
+          {loginEnabled ? (
+            <Link href={loginHref} className={cn('hidden sm:block lg:block')}>
+              <Button size="sm" variant="outline">
+                Login
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              size="sm"
+              variant="outline"
+              className={cn('hidden sm:block lg:block')}
+              disabled
+            >
               Login
             </Button>
-          </Link>
+          )}
           <Link href="/pricing" className={cn('hidden sm:block lg:block')}>
             <Button size="sm" variant="default">
               Get Started
@@ -179,15 +193,15 @@ const Navbar = () => {
             {/* keep content aligned with your layout while background is full-bleed */}
             <div className="container px-2.5">
               <div className="px-5">
-                  <nav
-                    className={cn(
-                      'mt-8 flex flex-col',
-                      'transition-[transform,opacity] duration-300',
-                      isMenuOpen
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-2 opacity-0',
-                    )}
-                  >
+                <nav
+                  className={cn(
+                    'mt-8 flex flex-col',
+                    'transition-[transform,opacity] duration-300',
+                    isMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-2 opacity-0',
+                  )}
+                >
                   <div className="flex flex-col gap-6">
                     {ITEMS.map((link) => (
                       <Link
@@ -207,11 +221,25 @@ const Navbar = () => {
                   </div>
 
                   <div className="mt-4 mb-6 flex flex-col gap-3">
-                    <Link href="/login" onClick={() => setIsMenuOpen(false)}>
-                      <Button className="w-full" size="sm" variant="outline">
+                    {loginEnabled ? (
+                      <Link
+                        href={loginHref}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <Button className="w-full" size="sm" variant="outline">
+                          Login
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button
+                        className="w-full"
+                        size="sm"
+                        variant="outline"
+                        disabled
+                      >
                         Login
                       </Button>
-                    </Link>
+                    )}
                     <Link href="/pricing" onClick={() => setIsMenuOpen(false)}>
                       <Button className="w-full" size="sm" variant="default">
                         Get Started

@@ -2,7 +2,9 @@ import { Facebook, Linkedin, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const columns = [
+import { isPublicUrlConfigured, publicAuthUrls } from '@/lib/public-env';
+
+const productAndCompanyColumns = [
   {
     title: 'Product',
     links: [
@@ -20,16 +22,6 @@ const columns = [
       { name: 'Blog', href: '/blog' },
     ],
   },
-  {
-    title: 'Legal & Access',
-    links: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookie-policy' },
-      { name: 'Sign Up', href: '/signup' },
-      { name: 'Login', href: '/login' },
-    ],
-  },
 ];
 
 const socials = [
@@ -39,6 +31,20 @@ const socials = [
 ];
 
 export const Footer = () => {
+  const columns = [
+    ...productAndCompanyColumns,
+    {
+      title: 'Legal & Access',
+      links: [
+        { name: 'Privacy Policy', href: '/privacy' },
+        { name: 'Terms of Service', href: '/terms' },
+        { name: 'Cookie Policy', href: '/cookie-policy' },
+        { name: 'Sign Up', href: publicAuthUrls.signup },
+        { name: 'Login', href: publicAuthUrls.login },
+      ],
+    },
+  ];
+
   return (
     <footer className="force-light-vars bg-primary text-primary-foreground px-2.5 lg:px-0">
       <div className="container py-12 md:py-16">
@@ -66,7 +72,14 @@ export const Footer = () => {
                     <li key={l.name}>
                       <Link
                         href={l.href}
-                        className="text-primary-foreground/90 hover:text-primary-foreground text-sm font-normal transition-colors"
+                        aria-disabled={
+                          !isPublicUrlConfigured(l.href) && l.href === '#'
+                        }
+                        className={`text-primary-foreground/90 hover:text-primary-foreground text-sm font-normal transition-colors ${
+                          !isPublicUrlConfigured(l.href) && l.href === '#'
+                            ? 'pointer-events-none opacity-60'
+                            : ''
+                        }`}
                       >
                         {l.name}
                       </Link>
