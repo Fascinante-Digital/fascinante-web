@@ -2,19 +2,17 @@ import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
 import { ThreeDMarquee } from '@/components/aceternity/3d-marquee';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface Hero239Props {
   className?: string;
 }
 
-const blockButtonBaseClass =
-  '!h-9 !rounded-md !border !border-transparent !bg-clip-padding !px-2.5 !text-sm !font-medium !transition-all !gap-1.5 !shadow-none !select-none focus-visible:!ring-3 focus-visible:!ring-ring/50 focus-visible:!border-ring';
+const blockDefaultButtonClass =
+  'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-md border border-transparent bg-clip-padding text-sm font-medium focus-visible:ring-3 aria-invalid:ring-3 [&_svg:not([class*=size-])]:size-4 inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none bg-primary text-primary-foreground hover:bg-primary/80 h-9 gap-1.5 px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2';
 
-const blockDefaultButtonClass = `${blockButtonBaseClass} !bg-primary !text-primary-foreground hover:!bg-primary/80`;
-
-const blockGhostButtonClass = `${blockButtonBaseClass} hover:!bg-muted hover:!text-foreground dark:hover:!bg-muted/50`;
+const blockGhostButtonClass =
+  'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-md border border-transparent bg-clip-padding text-sm font-medium focus-visible:ring-3 aria-invalid:ring-3 [&_svg:not([class*=size-])]:size-4 inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none hover:bg-muted hover:text-foreground dark:hover:bg-muted/50 aria-expanded:bg-muted aria-expanded:text-foreground h-9 gap-1.5 px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2';
 
 const Hero239 = ({ className }: Hero239Props) => {
   const images = [
@@ -70,10 +68,24 @@ const Hero239 = ({ className }: Hero239Props) => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         </p>
         <div className="flex items-center gap-4">
-          <Button className={blockDefaultButtonClass}>Get Started</Button>
-          <Button variant="ghost" className={blockGhostButtonClass}>
+          <button
+            type="button"
+            data-slot="button"
+            data-variant="default"
+            data-size="default"
+            className={blockDefaultButtonClass}
+          >
+            Get Started
+          </button>
+          <button
+            type="button"
+            data-slot="button"
+            data-variant="ghost"
+            data-size="default"
+            className={blockGhostButtonClass}
+          >
             Explore Benefits <ArrowRight />
-          </Button>
+          </button>
         </div>
 
         <div className="mt-15 flex h-full w-full items-center justify-center">
