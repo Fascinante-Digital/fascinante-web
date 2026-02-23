@@ -38,7 +38,7 @@ const heroMarqueeImages: MarqueeImage[] = [
 
 const Hero239 = ({ className }: Hero239Props) => {
   return (
-    <section className={cn('relative pt-16 pb-32', className)}>
+    <section className={cn('relative pt-12 pb-32', className)}>
       <div className="container flex flex-col items-center justify-center gap-5 text-center">
         <p className="bg-muted w-fit rounded-full px-4 py-1 text-sm uppercase">
           shadcnblocks
