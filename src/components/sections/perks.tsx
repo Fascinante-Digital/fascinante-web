@@ -49,7 +49,7 @@ export default function FascinantePerks({
 
           <div>
             <p className="text-tagline text-sm sm:text-base">{overline}</p>
-            <h2 className="text-foreground mt-4 text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+            <h2 className="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tighter sm:text-5xl">
               {title}
             </h2>
             <p className="text-muted-foreground mt-4 text-base sm:text-lg">

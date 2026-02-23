@@ -11,7 +11,7 @@ type IncludedItem = {
 
 export default function FascinanteFeaturesIncluded({
   overline = 'Features',
-  title = 'What\'s Included',
+  title = "What's Included",
   subtitle = 'Unlock the power of our robust features to elevate your business to new heights',
   items = DEFAULT_ITEMS,
 }: {
@@ -28,7 +28,7 @@ export default function FascinanteFeaturesIncluded({
       <div className="container px-0 py-16 sm:py-20 md:py-24">
         <div className="text-center">
           <p className="text-tagline text-sm sm:text-base">{overline}</p>
-          <h2 className="text-foreground mt-4 text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+          <h2 className="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tighter sm:text-5xl">
             {title}
           </h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-sm sm:text-base">

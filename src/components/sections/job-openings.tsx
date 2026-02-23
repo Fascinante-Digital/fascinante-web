@@ -49,11 +49,14 @@ export default function FascinanteJobOpenings({
   jobs = DEFAULT_JOBS,
 }: FascinanteJobOpeningsProps) {
   return (
-    <section id="fascinante-job-openings" className="bg-background px-6 lg:px-0">
+    <section
+      id="fascinante-job-openings"
+      className="bg-background px-6 lg:px-0"
+    >
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
         <div className="max-w-3xl">
           <p className="text-tagline text-sm sm:text-base">{overline}</p>
-          <h2 className="text-foreground mt-4 text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+          <h2 className="text-foreground mt-4 text-3xl leading-tight font-semibold tracking-tighter sm:text-5xl">
             {title}
           </h2>
           <p className="text-muted-foreground mt-4 text-base sm:text-lg">
@@ -80,7 +83,7 @@ export default function FascinanteJobOpenings({
                 </div>
 
                 <ArrowUpRight
-                  className="text-logo-gray mt-1 h-5 w-5 flex-shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="text-logo-gray mt-1 h-5 w-5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   aria-hidden
                 />
               </Link>
