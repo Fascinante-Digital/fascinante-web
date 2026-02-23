@@ -9,7 +9,10 @@ import type { PostFrontmatter } from '@/types/post';
 
 const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="mb-2 text-3xl tracking-tight text-white" {...props} />
+    <h2
+      className="mb-2 text-3xl font-semibold tracking-tighter text-white"
+      {...props}
+    />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className="text-muted-foreground" {...props} />

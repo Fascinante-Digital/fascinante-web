@@ -25,7 +25,7 @@ export default function FeaturedPost({
                   {!!post.tagline && (
                     <span className="text-tagline text-md">{post.tagline}</span>
                   )}
-                  <h2 className="text-foreground text-h2 mt-3 tracking-tight">
+                  <h2 className="text-foreground text-h2 mt-3 font-semibold tracking-tighter">
                     {post.title}
                   </h2>
                   {!!post.description && (

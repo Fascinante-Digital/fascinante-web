@@ -79,7 +79,7 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
             style={{
               transform: 'rotateX(55deg) rotateY(0deg) rotateZ(-45deg)',
             }}
-            className="relative top-24 right-[22%] grid size-full origin-top-left grid-cols-4 gap-8 transform-3d md:top-96 md:right-[50%]"
+            className="relative top-[27rem] right-[14%] grid size-full origin-top-left grid-cols-4 gap-8 transform-3d md:top-96 md:right-[50%]"
           >
             {chunks.map((subarray, colIndex) => (
               <motion.div
