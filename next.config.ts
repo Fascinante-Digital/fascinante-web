@@ -4,6 +4,10 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   output: 'export',
+  experimental: {
+    inlineCss: true,
+    cssChunking: true,
+  },
   images: {
     unoptimized: true,
 
