@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import FascinanteCta from '@/components/sections/cta';
 import FascinanteFaq from '@/components/sections/faq';
 import FascinanteFeaturedBlogPosts, {
@@ -9,6 +11,31 @@ import FascinanteIntegrations from '@/components/sections/integrations';
 import FascinanteLogos from '@/components/sections/logos';
 import FascinanteTestimonials from '@/components/sections/testimonials';
 import { getAllBlogs } from '@/lib/blog';
+import { siteConfig, toAbsoluteUrl } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description:
+    'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: toAbsoluteUrl('/'),
+    title: siteConfig.name,
+    description:
+      'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description:
+      'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+};
 
 export default function Home() {
   const latest = getAllBlogs()

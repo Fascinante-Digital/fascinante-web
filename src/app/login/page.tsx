@@ -1,7 +1,31 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { isPublicUrlConfigured, publicAuthUrls } from '@/lib/public-env';
+import { siteConfig, toAbsoluteUrl } from '@/lib/site';
+
+const description =
+  'Continue to the secure sign in portal managed by Fascinante Digital authentication services.';
+
+export const metadata: Metadata = {
+  title: 'Login',
+  description,
+  alternates: {
+    canonical: '/login',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    type: 'website',
+    url: toAbsoluteUrl('/login'),
+    title: `Login | ${siteConfig.name}`,
+    description,
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+};
 
 export default function LoginPage() {
   const loginHref = publicAuthUrls.login;
