@@ -33,6 +33,7 @@ const marqueeBaseImages: MarqueeImage[] = Array.from(
 const heroMarqueeImages: MarqueeImage[] = [
   ...marqueeBaseImages,
   ...marqueeBaseImages,
+  ...marqueeBaseImages,
 ];
 
 const Hero239 = ({ className }: Hero239Props) => {
