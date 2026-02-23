@@ -43,6 +43,7 @@ const eslintConfig = defineConfig([
   },
   globalIgnores([
     '.next/**',
+    '.vercel/**',
     'out/**',
     'build/**',
     'next-env.d.ts',

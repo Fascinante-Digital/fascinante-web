@@ -27,7 +27,6 @@ const Navbar = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState<number | 'auto'>(0);
-  const [minOpenHeight, setMinOpenHeight] = useState<number>(0);
 
   useLayoutEffect(() => {
     const wrapper = wrapperRef.current;
@@ -35,7 +34,6 @@ const Navbar = () => {
     if (!wrapper || !content) return;
 
     const viewportRemainder = Math.max(0, window.innerHeight - HEADER_HEIGHT);
-    setMinOpenHeight(viewportRemainder);
 
     const onEnd = () => {
       if (isMenuOpen) setPanelHeight('auto');
@@ -57,7 +55,6 @@ const Navbar = () => {
     const onResize = () => {
       if (!isMenuOpen || !contentRef.current) return;
       const viewportRemainder = Math.max(0, window.innerHeight - HEADER_HEIGHT);
-      setMinOpenHeight(viewportRemainder);
       if (panelHeight !== 'auto') {
         const target = Math.max(
           contentRef.current.scrollHeight,
@@ -175,7 +172,7 @@ const Navbar = () => {
           ref={wrapperRef}
           style={{
             height: panelHeight === 'auto' ? 'auto' : panelHeight,
-            minHeight: isMenuOpen ? `${minOpenHeight}px` : undefined,
+            minHeight: isMenuOpen ? 'calc(100dvh - 80px)' : undefined,
             transition: 'height 320ms cubic-bezier(.22,.61,.36,1)',
           }}
           className={cn(
