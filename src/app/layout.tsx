@@ -7,6 +7,7 @@ import Banner from '@/components/layout/banner';
 import { Footer } from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,26 +17,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fascinantedigital.com'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Fascinante Digital - Modern Next.js Template',
+    default: siteConfig.name,
     template: '%s | Fascinante Digital',
   },
-  description:
-    'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
+  description: siteConfig.description,
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
-    'Next.js',
-    'React',
-    'JavaScript',
-    'TypeScript',
-    'TailwindCSS',
-    'Template',
-    'Shadcn/UI',
-    'Web Development',
+    'Digital Marketing',
+    'Growth Strategy',
+    'Lead Generation',
+    'Content Marketing',
+    'Marketing Automation',
+    'Fascinante Digital',
   ],
   authors: [{ name: 'Fascinante Team' }],
   creator: 'Fascinante Team',
-  publisher: 'Fascinante',
+  publisher: siteConfig.name,
   robots: { index: true, follow: true },
   icons: {
     icon: [
@@ -49,26 +50,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon/favicon.ico' }],
   },
   openGraph: {
-    title: 'Fascinante Digital - Modern Next.js Template',
-    description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    siteName: 'Fascinante Digital',
+    type: 'website',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     images: [
       {
-        url: '/og-image.jpg',
+        url: toAbsoluteUrl(siteConfig.defaultOgImagePath),
         width: 1200,
         height: 630,
-        alt: 'Fascinante Digital - Modern Next.js Template',
+        alt: `${siteConfig.name} Open Graph image`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fascinante Digital - Modern Next.js Template',
-    description:
-      'A modern, fully featured Next.js template built with Shadcn/UI, TailwindCSS and TypeScript, perfect for your next web application.',
-    images: ['/og-image.jpg'],
-    creator: '@fascinante',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+    creator: siteConfig.twitterHandle,
   },
 };
 

@@ -1,7 +1,34 @@
+import type { Metadata } from 'next';
+
 import FeaturedPost from '@/components/sections/blog-featured';
 import FascinanteBlogGrid from '@/components/sections/blog-grid';
 import type { BlogPost } from '@/lib/blog';
 import { getAllBlogs } from '@/lib/blog';
+import { siteConfig, toAbsoluteUrl } from '@/lib/site';
+
+const description =
+  'Read practical digital marketing insights, campaign strategy breakdowns, and growth playbooks from the Fascinante Digital team.';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description,
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    type: 'website',
+    url: toAbsoluteUrl('/blog'),
+    title: `Blog | ${siteConfig.name}`,
+    description,
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Blog | ${siteConfig.name}`,
+    description,
+    images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
+  },
+};
 
 function extractChip(post: BlogPost): string {
   const fromTagline =
@@ -39,12 +66,13 @@ export default function BlogPage() {
             <div className="px-6 py-14 sm:px-8 sm:py-18 md:py-20">
               <p className="text-tagline text-sm sm:text-base">Our Blog</p>
 
-              <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight">
+              <h1 className="text-foreground text-h1 mt-4 font-medium tracking-tight">
                 Digital Marketing Insights & Strategies
               </h1>
 
               <p className="text-muted-foreground mt-4 max-w-2xl text-base sm:text-lg">
-                Expert advice, proven strategies, and actionable tips to grow your business online.
+                Expert advice, proven strategies, and actionable tips to grow
+                your business online.
               </p>
             </div>
           </div>
