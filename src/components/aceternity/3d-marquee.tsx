@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import type { CSSProperties } from 'react';
+import { useMemo, useSyncExternalStore } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -15,11 +16,34 @@ type GridLineProps = {
   offset?: string;
 };
 
+function useIsMobileViewport(): boolean {
+  return useSyncExternalStore(
+    (callback) => {
+      const mediaQuery = window.matchMedia('(max-width: 767px)');
+      mediaQuery.addEventListener('change', callback);
+      return () => mediaQuery.removeEventListener('change', callback);
+    },
+    () => window.matchMedia('(max-width: 767px)').matches,
+    () => false,
+  );
+}
+
 export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
-  const chunkSize = Math.ceil(images.length / 4);
+  const isMobileViewport = useIsMobileViewport();
+
+  const optimizedImages = useMemo(() => {
+    const mobileLimit = 12;
+    if (!isMobileViewport || images.length <= mobileLimit) {
+      return images;
+    }
+
+    return images.slice(0, mobileLimit);
+  }, [images, isMobileViewport]);
+
+  const chunkSize = Math.ceil(optimizedImages.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
-    return images.slice(start, start + chunkSize);
+    return optimizedImages.slice(start, start + chunkSize);
   });
 
   return (
@@ -60,6 +84,9 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
                       }}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
+                      loading={imageIndex === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      fetchPriority="low"
                       className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
                       width={970}
                       height={700}
