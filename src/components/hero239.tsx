@@ -9,7 +9,12 @@ interface Hero239Props {
   className?: string;
 }
 
-const blockButtonClass = 'h-10 rounded-md px-4 py-2 text-sm font-medium';
+const blockButtonBaseClass =
+  '!h-9 !rounded-md !border !border-transparent !bg-clip-padding !px-2.5 !text-sm !font-medium !transition-all !gap-1.5 !shadow-none !select-none focus-visible:!ring-3 focus-visible:!ring-ring/50 focus-visible:!border-ring';
+
+const blockDefaultButtonClass = `${blockButtonBaseClass} !bg-primary !text-primary-foreground hover:!bg-primary/80`;
+
+const blockGhostButtonClass = `${blockButtonBaseClass} hover:!bg-muted hover:!text-foreground dark:hover:!bg-muted/50`;
 
 const Hero239 = ({ className }: Hero239Props) => {
   const images = [
@@ -65,8 +70,8 @@ const Hero239 = ({ className }: Hero239Props) => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         </p>
         <div className="flex items-center gap-4">
-          <Button className={blockButtonClass}>Get Started</Button>
-          <Button variant="ghost" className={blockButtonClass}>
+          <Button className={blockDefaultButtonClass}>Get Started</Button>
+          <Button variant="ghost" className={blockGhostButtonClass}>
             Explore Benefits <ArrowRight />
           </Button>
         </div>
