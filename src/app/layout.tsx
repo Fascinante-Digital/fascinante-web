@@ -38,9 +38,18 @@ export const metadata: Metadata = {
   creator: 'Fascinante Team',
   publisher: siteConfig.name,
   robots: { index: true, follow: true },
+  manifest: '/favicon/site.webmanifest',
+  appleWebApp: {
+    title: siteConfig.name,
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon.ico', sizes: 'any' },
+      {
+        url: '/favicon/favicon-64x64.ico',
+        sizes: '64x64',
+        type: 'image/x-icon',
+      },
       { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
     ],
