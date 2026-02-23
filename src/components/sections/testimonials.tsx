@@ -84,7 +84,8 @@ const TESTIMONIALS: Testimonial[] = [
     avatar: '/images/homepage/testimonials/4.webp',
   },
   {
-    quote: '"The audience insights gave us visibility we didn\'t know we were missing."',
+    quote:
+      '"The audience insights gave us visibility we didn\'t know we were missing."',
     name: 'Leslie Alexander',
     role: 'Director, Airtable',
     avatar: '/images/homepage/testimonials/5.webp',
@@ -137,13 +138,14 @@ export default function FascinanteTestimonials() {
           Testimonials
         </p>
 
-        <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
           See What Our <br className="hidden sm:block" />
           Clients Say About Us
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base font-normal sm:text-lg">
-          Here&apos;s what some of our clients say about our marketing services and results.
+          Here&apos;s what some of our clients say about our marketing services
+          and results.
         </p>
 
         <div className="relative mt-10 md:mt-14">
@@ -163,7 +165,7 @@ export default function FascinanteTestimonials() {
             expanded ? 'mt-8' : '-mt-6'
           }`}
         >
-          <Button onClick={() => setExpanded((s) => !s)}>
+          <Button variant="marketing" onClick={() => setExpanded((s) => !s)}>
             {expanded ? 'Show Less' : 'See All Customer Stories'}
           </Button>
         </div>

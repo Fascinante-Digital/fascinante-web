@@ -15,7 +15,7 @@ const FascinanteCta = () => {
       <div className="bg-tagline pointer-events-none absolute top-0 left-1/2 h-full w-[500px] -translate-x-1/2" />
 
       <div className="relative container px-0 py-16 text-center sm:py-20 md:px-6 md:py-28">
-        <h2 className="text-primary-foreground mx-auto max-w-5xl text-h2 font-medium text-balance">
+        <h2 className="text-primary-foreground text-h2 mx-auto max-w-5xl font-medium text-balance">
           Simplifying Payments
           <br className="hidden sm:block" /> for Growing Business
         </h2>
@@ -28,7 +28,8 @@ const FascinanteCta = () => {
           {/* Primary button */}
           <Button
             asChild
-            className="bg-primary-foreground text-tagline hover:bg-primary-foreground/90 h-12 w-full rounded-[12px] sm:w-auto"
+            variant="marketing"
+            className="!bg-primary-foreground !text-tagline hover:!bg-primary-foreground/90 w-full sm:w-auto"
           >
             <Link href="/pricing">Get Started</Link>
           </Button>
@@ -36,8 +37,8 @@ const FascinanteCta = () => {
           {/* Transparent button */}
           <Button
             asChild
-            variant="ghost"
-            className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 h-12 w-full rounded-[12px] border bg-transparent sm:w-auto"
+            variant="marketingGhost"
+            className="!border-primary-foreground/30 !text-primary-foreground hover:!bg-primary-foreground/10 w-full border !bg-transparent sm:w-auto"
           >
             <Link href="/contact">Contact Us</Link>
           </Button>

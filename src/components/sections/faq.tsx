@@ -145,12 +145,13 @@ export default function FascinanteFaq() {
           FAQ
         </p>
 
-        <h2 className="text-foreground mx-auto mb-4 max-w-3xl text-center text-3xl leading-tight font-medium tracking-tight sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto mb-4 max-w-3xl text-center text-3xl leading-tight font-semibold tracking-tighter sm:text-4xl md:text-5xl">
           Frequently Asked Questions About Our Services
         </h2>
 
         <p className="text-muted-foreground mx-auto max-w-2xl text-center text-base font-normal sm:text-lg">
-          Get answers to common questions about our digital marketing services and how we help businesses grow.
+          Get answers to common questions about our digital marketing services
+          and how we help businesses grow.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 sm:mt-14">

@@ -11,9 +11,9 @@ export default function FascinanteContact() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>(
-    'idle'
-  );
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -71,7 +71,7 @@ export default function FascinanteContact() {
       if (!response.ok) {
         if (response.status === 429) {
           setErrorMessage(
-            'Hiciste demasiadas solicitudes. Intenta de nuevo en unos minutos.'
+            'Hiciste demasiadas solicitudes. Intenta de nuevo en unos minutos.',
           );
         } else if (response.status >= 500) {
           setErrorMessage('No pudimos enviar tu mensaje. Intenta de nuevo.');
@@ -109,7 +109,7 @@ export default function FascinanteContact() {
 
       <div className="relative z-10 container px-0">
         <div className="pt-20 text-center sm:pt-24 md:pt-28">
-          <h2 className="text-foreground text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+          <h2 className="text-foreground text-3xl leading-tight font-semibold tracking-tighter sm:text-5xl">
             Let’s Talk
           </h2>
           <p className="text-muted-foreground mx-auto mt-3 max-w-2xl text-sm sm:text-base">
@@ -192,7 +192,8 @@ export default function FascinanteContact() {
 
               <Button
                 type="submit"
-                className="bg-foreground text-primary-foreground hover:bg-foreground/90 mt-2 h-12 w-full rounded-[8px]"
+                variant="marketing"
+                className="mt-2 w-full"
                 disabled={status === 'loading'}
               >
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
@@ -204,7 +205,8 @@ export default function FascinanteContact() {
               ) : null}
               {status === 'error' ? (
                 <p className="text-center text-sm text-red-600">
-                  {errorMessage || 'No pudimos enviar tu mensaje. Intenta de nuevo.'}
+                  {errorMessage ||
+                    'No pudimos enviar tu mensaje. Intenta de nuevo.'}
                 </p>
               ) : null}
             </form>

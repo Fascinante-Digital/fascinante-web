@@ -3,15 +3,16 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import Banner from '@/components/layout/banner';
 import { Footer } from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
+import { SiteBanner } from '../../apps/www/components/site-banner';
+
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
 });
@@ -85,7 +86,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Banner url="https://fascinantedigital.com" />
+          <SiteBanner />
           <Navbar />
           <main>{children}</main>
           <Footer />

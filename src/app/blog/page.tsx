@@ -66,7 +66,7 @@ export default function BlogPage() {
             <div className="px-6 py-14 sm:px-8 sm:py-18 md:py-20">
               <p className="text-tagline text-sm sm:text-base">Our Blog</p>
 
-              <h1 className="text-foreground text-h1 mt-4 font-medium tracking-tight">
+              <h1 className="text-foreground text-h1 mt-4 font-semibold tracking-tighter">
                 Digital Marketing Insights & Strategies
               </h1>
 

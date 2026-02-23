@@ -29,7 +29,7 @@ export default function NotFound() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
-            <Button asChild className="w-full sm:w-auto">
+            <Button asChild variant="marketing" className="w-full sm:w-auto">
               <Link href="/">Back to Home</Link>
             </Button>
 

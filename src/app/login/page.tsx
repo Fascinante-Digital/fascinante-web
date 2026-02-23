@@ -40,7 +40,7 @@ export default function LoginPage() {
       <div className="container px-0 py-16 md:px-6">
         <div className="bg-features-hero mx-auto max-w-2xl rounded-[16px] px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
           <p className="text-tagline text-sm">Account Access</p>
-          <h1 className="text-foreground text-h1 mt-3 font-medium tracking-tight">
+          <h1 className="text-foreground text-h1 mt-3 font-semibold tracking-tighter">
             Sign in to continue
           </h1>
           <p className="text-muted-foreground mx-auto mt-3 max-w-lg text-sm sm:text-base">
@@ -50,11 +50,11 @@ export default function LoginPage() {
 
           <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3">
             {loginConfigured ? (
-              <Button asChild className="h-11 w-full rounded-[8px]">
+              <Button asChild variant="marketing" className="w-full">
                 <Link href={loginHref}>Continue to Sign In</Link>
               </Button>
             ) : (
-              <Button className="h-11 w-full rounded-[8px]" disabled>
+              <Button variant="marketing" className="w-full" disabled>
                 Sign In Temporarily Unavailable
               </Button>
             )}

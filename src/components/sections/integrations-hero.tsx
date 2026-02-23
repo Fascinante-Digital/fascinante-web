@@ -30,20 +30,23 @@ export default function FascinanteIntegrationsHero({
       className="bg-features-hero px-6"
     >
       <div className="container px-0">
-        <div className="mx-auto grid max-w-4xl gap-3 sm:gap-4 pt-8 pb-6 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12 content-center">
-          <Badge align="left" className="sm:text-center">{overline}</Badge>
+        <div className="mx-auto grid max-w-4xl content-center gap-3 pt-8 pb-6 sm:gap-4 sm:pt-8 sm:pb-8 md:pt-12 md:pb-12">
+          <Badge align="left" className="sm:text-center">
+            {overline}
+          </Badge>
 
-          <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance text-left sm:text-center">
+          <h1 className="text-foreground text-h1 text-left font-semibold tracking-tighter text-balance sm:text-center">
             {title}
           </h1>
 
-          <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-base sm:text-lg text-left sm:text-center">
+          <p className="text-muted-foreground md:text-md mx-auto max-w-2xl text-left text-base sm:text-center sm:text-lg">
             {description}
           </p>
 
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 w-full">
+          <div className="mt-2 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
             <Button
               asChild
+              variant="marketing"
               className="w-full sm:w-auto"
               aria-label={primaryCtaLabel}
             >
@@ -51,8 +54,8 @@ export default function FascinanteIntegrationsHero({
             </Button>
             <Button
               asChild
-              variant="outline"
-              className="w-full sm:w-auto"
+              variant="marketingGhost"
+              className="!border-border !bg-background !text-foreground hover:!bg-muted w-full sm:w-auto"
               aria-label={secondaryCtaLabel}
             >
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>

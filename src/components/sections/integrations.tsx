@@ -41,15 +41,14 @@ const INTEGRATIONS: Integration[] = [
   },
   {
     name: 'Okta integration',
-    description:
-      'Enterprise-grade security and authentication for your team.',
+    description: 'Enterprise-grade security and authentication for your team.',
     icon: '/images/homepage/integrations/okta.svg',
     href: '#',
   },
   {
     name: 'Stripe integration',
     description:
-      'Accept payments securely with the world\'s leading payment platform.',
+      "Accept payments securely with the world's leading payment platform.",
     icon: '/images/homepage/integrations/stripe.svg',
     href: '#',
   },
@@ -83,13 +82,16 @@ function IntegrationCard({ item }: { item: Integration }) {
 
 const FascinanteIntegrations = () => {
   return (
-    <section id="fascinante-integrations" className="bg-background px-6 lg:px-0">
+    <section
+      id="fascinante-integrations"
+      className="bg-background px-6 lg:px-0"
+    >
       <div className="container px-0 py-16 text-center sm:py-20 md:px-6 md:py-28">
         <p className="text-tagline mb-4 text-sm leading-tight sm:text-base">
           Integrations
         </p>
 
-        <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
           Attract More Leads <br className="hidden sm:block" />
           and Convert Better
         </h2>
@@ -101,12 +103,13 @@ const FascinanteIntegrations = () => {
         </ul>
 
         <p className="text-muted-foreground text-md text-md mx-auto mt-10 max-w-3xl font-normal md:mt-20">
-          Connect your favorite marketing and business tools to streamline workflows.
-          Integrate with Google Analytics, HubSpot, Salesforce, Mailchimp, and more.
+          Connect your favorite marketing and business tools to streamline
+          workflows. Integrate with Google Analytics, HubSpot, Salesforce,
+          Mailchimp, and more.
         </p>
 
         <div className="mt-6 flex justify-center">
-          <Button className="w-full sm:w-auto" asChild>
+          <Button className="w-full sm:w-auto" variant="marketing" asChild>
             <Link href="/integrations">See All Integrations</Link>
           </Button>
         </div>

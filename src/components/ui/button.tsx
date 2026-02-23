@@ -12,6 +12,10 @@ const buttonVariants = cva(
       variant: {
         default:
           'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90',
+        marketing:
+          'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 !rounded-md border border-transparent bg-clip-padding !text-sm !font-medium focus-visible:ring-3 aria-invalid:ring-3 bg-primary text-primary-foreground hover:bg-primary/80 !h-9 !gap-1.5 !px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+        marketingGhost:
+          'focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 !rounded-md border border-transparent bg-clip-padding !text-sm !font-medium focus-visible:ring-3 aria-invalid:ring-3 hover:bg-muted hover:text-foreground dark:hover:bg-muted/50 aria-expanded:bg-muted aria-expanded:text-foreground !h-9 !gap-1.5 !px-2.5 in-data-[slot=button-group]:rounded-md has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
         destructive:
           'bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90',
         outline:
@@ -37,7 +41,8 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }

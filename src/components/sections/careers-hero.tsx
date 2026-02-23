@@ -22,13 +22,16 @@ export default function FascinanteCareersHero({
   primaryCtaLabel = 'See Job Openings',
 }: FascinanteCareersHeroProps) {
   return (
-    <section id="fascinante-careers-hero" className="bg-background px-6 lg:px-0">
+    <section
+      id="fascinante-careers-hero"
+      className="bg-background px-6 lg:px-0"
+    >
       <div className="container px-0 md:px-6">
         <div className="bg-features-hero relative overflow-hidden">
           <div className="mx-auto max-w-5xl px-6 py-16 text-center sm:px-8 sm:py-20 md:py-24">
             <p className="text-tagline mb-4 text-sm sm:text-base">{overline}</p>
 
-            <h1 className="text-foreground text-h1 font-medium tracking-tight text-balance">
+            <h1 className="text-foreground text-h1 font-semibold tracking-tighter text-balance">
               {title}
             </h1>
 
@@ -37,7 +40,7 @@ export default function FascinanteCareersHero({
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Button asChild>
+              <Button asChild variant="marketing">
                 <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
               </Button>
             </div>

@@ -90,7 +90,7 @@ export default function FascinanteAllIntegrations({
       className="bg-background px-6 lg:px-0"
     >
       <div className="container px-0 py-16 sm:py-20 md:px-6 md:py-24">
-        <h2 className="text-foreground text-center text-h2 font-medium tracking-tight">
+        <h2 className="text-foreground text-h2 text-center font-semibold tracking-tighter">
           {title}
         </h2>
 
