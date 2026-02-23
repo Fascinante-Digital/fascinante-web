@@ -12,6 +12,12 @@ const ITEMS = [
   { name: 'Arc', src: '/images/logos/square.svg' },
 ];
 
+const logoContainerClasses =
+  'relative h-[24px] w-[96px] md:h-[40px] md:w-[160px]';
+
+const logoImageClasses =
+  'object-contain brightness-0 contrast-[90%] hue-rotate-[190deg] invert-[0.43] saturate-[180%] sepia-[0.06]';
+
 const FascinanteLogos = () => {
   return (
     <section
@@ -28,14 +34,13 @@ const FascinanteLogos = () => {
           <ul className="flex flex-nowrap items-center justify-center gap-8 sm:gap-12 md:gap-16">
             {ITEMS.slice(0, 5).map((item) => (
               <li key={item.name} className="flex-shrink-0">
-                <div className="relative h-6 w-auto md:h-10">
+                <div className={logoContainerClasses}>
                   <Image
                     src={item.src}
                     alt={item.name}
-                    width={100}
-                    height={40}
-                    className="h-6 w-auto brightness-0 contrast-[90%] hue-rotate-[190deg] invert-[0.43] saturate-[180%] sepia-[0.06] md:h-10"
-                    style={{ height: '100%', width: 'auto' }}
+                    fill
+                    className={logoImageClasses}
+                    sizes="(max-width: 768px) 96px, 160px"
                   />
                 </div>
               </li>
@@ -46,14 +51,13 @@ const FascinanteLogos = () => {
           <ul className="flex -translate-x-4 flex-nowrap items-center justify-center gap-8 sm:-translate-x-6 sm:gap-12 md:gap-16">
             {ITEMS.slice(5).map((item) => (
               <li key={item.name} className="flex-shrink-0">
-                <div className="relative h-6 w-auto md:h-10">
+                <div className={logoContainerClasses}>
                   <Image
                     src={item.src}
                     alt={item.name}
-                    width={100}
-                    height={40}
-                    className="h-6 w-auto brightness-0 contrast-[90%] hue-rotate-[190deg] invert-[0.43] saturate-[180%] sepia-[0.06] md:h-10"
-                    style={{ height: '100%', width: 'auto' }}
+                    fill
+                    className={logoImageClasses}
+                    sizes="(max-width: 768px) 96px, 160px"
                   />
                 </div>
               </li>
