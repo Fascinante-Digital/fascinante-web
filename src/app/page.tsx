@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
+import { Hero239 } from '@/components/hero239';
 import FascinanteCta from '@/components/sections/cta';
 import FascinanteFaq from '@/components/sections/faq';
 import FascinanteFeaturedBlogPosts, {
   FeaturedCard,
 } from '@/components/sections/featured-blog-posts';
 import FascinanteFeatures from '@/components/sections/features';
-import Hero239 from '@/components/sections/hero239';
 import FascinanteIntegrations from '@/components/sections/integrations';
 import FascinanteLogos from '@/components/sections/logos';
 import FascinanteTestimonials from '@/components/sections/testimonials';

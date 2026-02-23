@@ -1,4 +1,6 @@
-import Image from 'next/image';
+'use client';
+
+import { motion } from 'motion/react';
 import type { CSSProperties } from 'react';
 
 import { cn } from '@/lib/utils';
@@ -8,65 +10,125 @@ type ThreeDMarqueeProps = {
   className?: string;
 };
 
-type RowProps = {
-  images: string[];
-  reverse?: boolean;
-  duration: string;
+type GridLineProps = {
+  className?: string;
+  offset?: string;
 };
 
-function MarqueeRow({ images, reverse = false, duration }: RowProps) {
-  const repeated = [...images, ...images];
-
-  return (
-    <div className="overflow-hidden">
-      <div
-        className={cn(
-          'hero239-marquee-track flex min-w-max gap-4 md:gap-5',
-          reverse && 'hero239-marquee-reverse',
-        )}
-        style={{ '--hero239-duration': duration } as CSSProperties}
-      >
-        {repeated.map((src, index) => (
-          <div
-            key={`${src}-${index}`}
-            className="relative h-28 w-44 overflow-hidden rounded-2xl border border-white/35 bg-white/10 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.55)] backdrop-blur-sm sm:h-32 sm:w-52 lg:h-36 lg:w-56"
-          >
-            <Image
-              src={src}
-              alt="Hero visual"
-              fill
-              sizes="(max-width: 640px) 176px, (max-width: 1024px) 208px, 224px"
-              className="object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export function ThreeDMarquee({ images, className }: ThreeDMarqueeProps) {
-  const rowSize = Math.max(1, Math.ceil(images.length / 3));
-  const rowA = images.slice(0, rowSize);
-  const rowB = images.slice(rowSize, rowSize * 2);
-  const rowC = images.slice(rowSize * 2);
+export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
+  const chunkSize = Math.ceil(images.length / 4);
+  const chunks = Array.from({ length: 4 }, (_, colIndex) => {
+    const start = colIndex * chunkSize;
+    return images.slice(start, start + chunkSize);
+  });
 
   return (
     <div
       className={cn(
-        'relative w-full [perspective:1200px] [transform-style:preserve-3d]',
+        'mx-auto block h-[600px] overflow-hidden rounded-2xl max-sm:h-100',
         className,
       )}
     >
-      <div className="hero239-mask [transform:rotateX(18deg)_rotateY(-8deg)] space-y-4 sm:space-y-5">
-        <MarqueeRow images={rowA} duration="36s" />
-        <MarqueeRow
-          images={rowB.length > 0 ? rowB : rowA}
-          reverse
-          duration="42s"
-        />
-        <MarqueeRow images={rowC.length > 0 ? rowC : rowA} duration="48s" />
+      <div className="flex size-full items-center justify-center">
+        <div className="size-[1720px] shrink-0 scale-50 sm:scale-75 lg:scale-100">
+          <div
+            style={{
+              transform: 'rotateX(55deg) rotateY(0deg) rotateZ(-45deg)',
+            }}
+            className="relative top-96 right-[50%] grid size-full origin-top-left grid-cols-4 gap-8 transform-3d"
+          >
+            {chunks.map((subarray, colIndex) => (
+              <motion.div
+                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
+                transition={{
+                  duration: colIndex % 2 === 0 ? 10 : 15,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                }}
+                key={`${colIndex}-marquee`}
+                className="flex flex-col items-start gap-8"
+              >
+                <GridLineVertical className="-left-4" offset="80px" />
+                {subarray.map((image, imageIndex) => (
+                  <div className="relative" key={`${imageIndex}-${image}`}>
+                    <GridLineHorizontal className="-top-4" offset="20px" />
+                    <motion.img
+                      whileHover={{ y: -10 }}
+                      transition={{
+                        duration: 0.3,
+                        ease: 'easeInOut',
+                      }}
+                      src={image}
+                      alt={`Image ${imageIndex + 1}`}
+                      className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
+                      width={970}
+                      height={700}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+const GridLineHorizontal = ({ className, offset }: GridLineProps) => {
+  return (
+    <div
+      style={
+        {
+          '--background': '#ffffff',
+          '--color': 'rgba(0, 0, 0, 0.2)',
+          '--height': '1px',
+          '--width': '5px',
+          '--fade-stop': '90%',
+          '--offset': offset || '200px',
+          '--color-dark': 'rgba(255, 255, 255, 0.2)',
+          maskComposite: 'exclude',
+        } as CSSProperties
+      }
+      className={cn(
+        'absolute left-[calc(var(--offset)/2*-1)] h-[var(--height)] w-[calc(100%+var(--offset))]',
+        'bg-[linear-gradient(to_right,var(--color),var(--color)_50%,transparent_0,transparent)]',
+        '[background-size:var(--width)_var(--height)]',
+        '[mask:linear-gradient(to_left,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_right,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]',
+        '[mask-composite:exclude]',
+        'z-30',
+        'dark:bg-[linear-gradient(to_right,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]',
+        className,
+      )}
+    />
+  );
+};
+
+const GridLineVertical = ({ className, offset }: GridLineProps) => {
+  return (
+    <div
+      style={
+        {
+          '--background': '#ffffff',
+          '--color': 'rgba(0, 0, 0, 0.2)',
+          '--height': '5px',
+          '--width': '1px',
+          '--fade-stop': '90%',
+          '--offset': offset || '150px',
+          '--color-dark': 'rgba(255, 255, 255, 0.2)',
+          maskComposite: 'exclude',
+        } as CSSProperties
+      }
+      className={cn(
+        'absolute top-[calc(var(--offset)/2*-1)] h-[calc(100%+var(--offset))] w-[var(--width)]',
+        'bg-[linear-gradient(to_bottom,var(--color),var(--color)_50%,transparent_0,transparent)]',
+        '[background-size:var(--width)_var(--height)]',
+        '[mask:linear-gradient(to_top,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_bottom,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]',
+        '[mask-composite:exclude]',
+        'z-30',
+        'dark:bg-[linear-gradient(to_bottom,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]',
+        className,
+      )}
+    />
+  );
+};
