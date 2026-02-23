@@ -33,7 +33,7 @@ export default function FascinanteAboutHero({
             {overline}
           </Badge>
 
-          <h1 className="text-foreground text-h1 text-left font-medium tracking-tight text-balance sm:text-center">
+          <h1 className="text-foreground text-h1 text-left font-semibold tracking-tighter text-balance sm:text-center">
             {title}
           </h1>
 

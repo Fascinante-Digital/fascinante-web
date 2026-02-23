@@ -109,7 +109,7 @@ export default function FascinanteContact() {
 
       <div className="relative z-10 container px-0">
         <div className="pt-20 text-center sm:pt-24 md:pt-28">
-          <h2 className="text-foreground text-3xl leading-tight font-medium tracking-tight sm:text-5xl">
+          <h2 className="text-foreground text-3xl leading-tight font-semibold tracking-tighter sm:text-5xl">
             Let’s Talk
           </h2>
           <p className="text-muted-foreground mx-auto mt-3 max-w-2xl text-sm sm:text-base">

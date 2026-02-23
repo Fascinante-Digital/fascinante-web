@@ -318,22 +318,22 @@
 /* Base heading styles */
 @layer base {
   h1 {
-    @apply text-h1 font-medium tracking-tight;
+    @apply text-h1 font-semibold tracking-tighter;
   }
   h2 {
-    @apply text-h2 font-medium tracking-tight;
+    @apply text-h2 font-semibold tracking-tighter;
   }
   h3 {
-    @apply text-h3 font-medium tracking-tight;
+    @apply text-h3 font-semibold tracking-tighter;
   }
   h4 {
-    @apply text-h4 font-medium;
+    @apply text-h4 font-semibold tracking-tighter;
   }
   h5 {
-    @apply text-h5 font-medium;
+    @apply text-h5 font-semibold tracking-tighter;
   }
   h6 {
-    @apply text-h6 font-medium;
+    @apply text-h6 font-semibold tracking-tighter;
   }
 }
 

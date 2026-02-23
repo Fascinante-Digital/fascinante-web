@@ -36,7 +36,7 @@ export default function FascinanteFeaturedBlogPosts({
       <div className="container px-0 md:px-6">
         <div className="text-center">
           <div className="text-tagline text-sm font-medium">{overline}</div>
-          <h2 className="text-foreground mt-2 text-3xl leading-tight font-medium tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-foreground mt-2 text-3xl leading-tight font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
             {title}
           </h2>
           <p className="text-muted-foreground mx-auto mt-3 max-w-[720px]">
@@ -80,7 +80,7 @@ function PostRow(p: FeaturedCard) {
           {!!p.tagline && (
             <div className="text-tagline text-sm">{p.tagline}</div>
           )}
-          <h3 className="text-foreground text-h3 mt-1 font-medium tracking-tight">
+          <h3 className="text-foreground text-h3 mt-1 font-semibold tracking-tighter">
             {p.title}
           </h3>
           {!!p.intro && (

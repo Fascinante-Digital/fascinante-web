@@ -60,7 +60,7 @@ const Hero239 = ({ className }: Hero239Props) => {
         <p className="bg-muted w-fit rounded-full px-4 py-1 text-sm uppercase">
           shadcnblocks
         </p>
-        <h1 className="mt-3 max-w-xl text-5xl font-medium font-semibold tracking-tighter lg:max-w-3xl lg:text-6xl">
+        <h1 className="mt-3 max-w-xl text-5xl font-semibold tracking-tighter lg:max-w-3xl lg:text-6xl">
           Unlock the Premium Blocks Just one time payment
         </h1>
         <p className="text-muted-foreground max-w-xl">

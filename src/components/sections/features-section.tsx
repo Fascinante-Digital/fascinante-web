@@ -35,7 +35,7 @@ export default function FascinanteFeaturesHero({
             <div className="max-w-xl pl-0 text-left">
               <Badge align="left">{overline}</Badge>
 
-              <h1 className="text-foreground text-h1 font-medium tracking-tight">
+              <h1 className="text-foreground text-h1 font-semibold tracking-tighter">
                 {title.split('\n').map((line, i) => (
                   <span key={i} className={i > 0 ? 'block' : undefined}>
                     {line}

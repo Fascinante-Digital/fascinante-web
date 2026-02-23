@@ -138,7 +138,7 @@ export default function FascinanteTestimonials() {
           Testimonials
         </p>
 
-        <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
           See What Our <br className="hidden sm:block" />
           Clients Say About Us
         </h2>

@@ -91,7 +91,7 @@ const FascinanteIntegrations = () => {
           Integrations
         </p>
 
-        <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl md:text-5xl">
+        <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
           Attract More Leads <br className="hidden sm:block" />
           and Convert Better
         </h2>
