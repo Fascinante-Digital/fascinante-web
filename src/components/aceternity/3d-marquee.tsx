@@ -69,7 +69,7 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
   return (
     <div
       className={cn(
-        'mx-auto block h-[600px] overflow-hidden rounded-2xl max-md:h-[440px]',
+        'mx-auto block h-[600px] overflow-hidden rounded-2xl max-md:h-[340px]',
         className,
       )}
     >
