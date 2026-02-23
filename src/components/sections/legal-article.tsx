@@ -1,13 +1,11 @@
-'use client';
-
-import * as React from 'react';
+import type { ReactNode } from 'react';
 
 type LegalArticleProps = {
   overline?: string;
   title: string;
   subtitle?: string;
   updatedAt?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export default function LegalArticle({
