@@ -4,8 +4,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import type { BlogPost } from '@/lib/blog';
+import { formatBlogDate } from '@/lib/date';
 
-export default function FeaturedPost({ post, tagline = 'Featured Article' }: { post: BlogPost; tagline?: string }) {
+export default function FeaturedPost({
+  post,
+  tagline = 'Featured Article',
+}: {
+  post: BlogPost;
+  tagline?: string;
+}) {
   return (
     <section className="px-6 py-10 lg:py-16">
       <div className="container px-0">
@@ -18,7 +25,7 @@ export default function FeaturedPost({ post, tagline = 'Featured Article' }: { p
                   {!!post.tagline && (
                     <span className="text-tagline text-md">{post.tagline}</span>
                   )}
-                  <h2 className="text-foreground mt-3 text-h2 tracking-tight">
+                  <h2 className="text-foreground text-h2 mt-3 tracking-tight">
                     {post.title}
                   </h2>
                   {!!post.description && (
@@ -36,15 +43,7 @@ export default function FeaturedPost({ post, tagline = 'Featured Article' }: { p
                     />
                     <span className="text-sm">{post.author}</span>
                     <span className="text-sm">•</span>
-                    <span className="text-sm">
-                      {post.date
-                        ? new Date(post.date).toLocaleDateString('en-US', {
-                            month: 'short',
-                            day: '2-digit',
-                            year: 'numeric',
-                          })
-                        : ''}
-                    </span>
+                    <span className="text-sm">{formatBlogDate(post.date)}</span>
                   </div>
                 </div>
               </div>

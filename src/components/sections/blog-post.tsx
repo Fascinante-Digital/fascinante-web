@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 
+import { formatBlogDate } from '@/lib/date';
+
 type Props = {
   tagline?: string;
   title: string;
@@ -28,7 +30,7 @@ export default function FascinanteBlogPost({
           <div className="mx-auto max-w-[992px] px-4 py-6 md:py-12">
             {!!tagline && <span className="text-tagline">{tagline}</span>}
 
-            <h1 className="text-foreground mt-3 text-h1 tracking-tight">
+            <h1 className="text-foreground text-h1 mt-3 tracking-tight">
               {title}
             </h1>
 
@@ -65,13 +67,7 @@ export default function FascinanteBlogPost({
                 {author && <span className="text-sm">{author}</span>}
                 {author && published && <span className="text-sm">•</span>}
                 {published && (
-                  <span className="text-sm">
-                    {new Date(published).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: '2-digit',
-                      year: 'numeric',
-                    })}
-                  </span>
+                  <span className="text-sm">{formatBlogDate(published)}</span>
                 )}
               </div>
             )}

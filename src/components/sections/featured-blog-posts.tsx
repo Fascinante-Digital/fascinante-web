@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { formatBlogDate } from '@/lib/date';
+
 export type FeaturedCard = {
   slug: string;
   title: string;
@@ -17,7 +19,7 @@ export default function FascinanteFeaturedBlogPosts({
   posts = [],
   title = 'Latest Articles',
   overline = 'From Our Blog',
-  subtitle = "Explore more insights and strategies from our digital marketing experts.",
+  subtitle = 'Explore more insights and strategies from our digital marketing experts.',
 }: {
   posts?: FeaturedCard[];
   title?: string;
@@ -78,7 +80,7 @@ function PostRow(p: FeaturedCard) {
           {!!p.tagline && (
             <div className="text-tagline text-sm">{p.tagline}</div>
           )}
-          <h3 className="text-foreground mt-1 text-h3 font-medium tracking-tight">
+          <h3 className="text-foreground text-h3 mt-1 font-medium tracking-tight">
             {p.title}
           </h3>
           {!!p.intro && (
@@ -96,15 +98,7 @@ function PostRow(p: FeaturedCard) {
             />
             <span className="text-xs">{p.author}</span>
             <span className="text-xs">•</span>
-            <span className="text-xs">
-              {p.date
-                ? new Date(p.date).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: '2-digit',
-                    year: 'numeric',
-                  })
-                : ''}
-            </span>
+            <span className="text-xs">{formatBlogDate(p.date)}</span>
           </div>
         </div>
       </article>

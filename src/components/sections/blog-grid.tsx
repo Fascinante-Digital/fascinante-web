@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { formatBlogDate } from '@/lib/date';
 import { cn } from '@/lib/utils';
 
 export type BlogGridCard = {
@@ -27,7 +28,11 @@ export type BlogGridCard = {
 const PER_PAGE = 6;
 const ALL = 'All Post';
 
-export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] }) {
+export default function FascinanteBlogGrid({
+  posts,
+}: {
+  posts: BlogGridCard[];
+}) {
   const categories = React.useMemo(() => {
     const set = new Set<string>();
     posts.forEach((p) => set.add((p.tagline ?? 'General').trim()));
@@ -72,7 +77,7 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
 
   return (
     <section className="px-6 py-10 lg:py-16">
-        <div className="container grid gap-8 px-0 lg:grid-cols-[260px_minmax(0,1fr)]">
+      <div className="container grid gap-8 px-0 lg:grid-cols-[260px_minmax(0,1fr)]">
         {/* Sidebar */}
         <aside className="space-y-4">
           <h3 className="text-muted-foreground text-sm font-medium">
@@ -177,7 +182,7 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
                         <span className="text-tagline">{p.tagline}</span>
                       )}
 
-                      <h4 className="text-foreground mt-2 text-h4 tracking-tight">
+                      <h4 className="text-foreground text-h4 mt-2 tracking-tight">
                         {p.title}
                       </h4>
 
@@ -198,13 +203,7 @@ export default function FascinanteBlogGrid({ posts }: { posts: BlogGridCard[] })
                         <span className="text-xs">{p.author}</span>
                         <span className="text-xs">•</span>
                         <span className="text-xs">
-                          {p.date
-                            ? new Date(p.date).toLocaleDateString('en-US', {
-                                month: 'short',
-                                day: '2-digit',
-                                year: 'numeric',
-                              })
-                            : ''}
+                          {formatBlogDate(p.date)}
                         </span>
                       </div>
                     </div>
