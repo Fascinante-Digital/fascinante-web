@@ -54,8 +54,8 @@ export default function FascinanteIntegrationsHero({
             </Button>
             <Button
               asChild
-              variant="outline"
-              className="w-full sm:w-auto"
+              variant="marketingGhost"
+              className="!border-border !bg-background !text-foreground hover:!bg-muted w-full sm:w-auto"
               aria-label={secondaryCtaLabel}
             >
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>

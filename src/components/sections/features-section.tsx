@@ -56,7 +56,11 @@ export default function FascinanteFeaturesHero({
                   <Link href={primaryCtaHref}>{primaryCtaLabel}</Link>
                 </Button>
 
-                <Button asChild variant="outline" className="w-full sm:w-auto">
+                <Button
+                  asChild
+                  variant="marketingGhost"
+                  className="!border-border !bg-background !text-foreground hover:!bg-muted w-full sm:w-auto"
+                >
                   <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
                 </Button>
               </div>
