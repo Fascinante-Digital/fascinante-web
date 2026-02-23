@@ -1,31 +1,35 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const Banner = ({ url = 'https://fascinantedigital.com' }: { url?: string }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isClient, setIsClient] = useState(false);
+const Banner = ({
+  url = 'https://fascinantedigital.com',
+}: {
+  url?: string;
+}) => {
+  const isHydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  // Check localStorage to see if banner was previously dismissed
-  useEffect(() => {
-    setIsClient(true);
-    const bannerDismissed = localStorage.getItem('banner-dismissed');
-    if (bannerDismissed === 'true') {
-      setIsVisible(false);
-    }
-  }, []);
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  const wasDismissedPreviously =
+    isHydrated && window.localStorage.getItem('banner-dismissed') === 'true';
+
+  const isVisible = isHydrated && !isDismissed && !wasDismissedPreviously;
 
   const handleDismiss = () => {
-    setIsVisible(false);
-    localStorage.setItem('banner-dismissed', 'true');
+    setIsDismissed(true);
+    window.localStorage.setItem('banner-dismissed', 'true');
   };
 
-  // Don't render anything until client-side hydration is complete
-  if (!isClient || !isVisible) {
+  if (!isVisible) {
     return null;
   }
 
