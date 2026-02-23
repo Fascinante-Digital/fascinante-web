@@ -86,9 +86,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2.5">
           {loginButton}
           <Link href="/pricing" className="hidden sm:block lg:block">
-            <Button size="sm" variant="default">
-              Get Started
-            </Button>
+            <Button variant="marketing">Get Started</Button>
           </Link>
 
           <div className="lg:block">
@@ -191,7 +189,7 @@ export default function Navbar() {
                     )}
 
                     <Link href="/pricing" onClick={() => setIsMenuOpen(false)}>
-                      <Button className="w-full" size="sm" variant="default">
+                      <Button className="w-full" variant="marketing">
                         Get Started
                       </Button>
                     </Link>

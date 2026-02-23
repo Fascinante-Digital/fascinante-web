@@ -50,11 +50,11 @@ export default function LoginPage() {
 
           <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3">
             {loginConfigured ? (
-              <Button asChild className="h-11 w-full rounded-[8px]">
+              <Button asChild variant="marketing" className="w-full">
                 <Link href={loginHref}>Continue to Sign In</Link>
               </Button>
             ) : (
-              <Button className="h-11 w-full rounded-[8px]" disabled>
+              <Button variant="marketing" className="w-full" disabled>
                 Sign In Temporarily Unavailable
               </Button>
             )}

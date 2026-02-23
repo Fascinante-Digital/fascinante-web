@@ -26,6 +26,7 @@ const FascinanteHero = () => {
           <div className="mt-2 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
             <Button
               asChild
+              variant="marketing"
               className="w-full sm:w-auto"
               aria-label="Get started"
             >

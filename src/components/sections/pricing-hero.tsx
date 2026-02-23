@@ -29,7 +29,8 @@ const PLANS: Plan[] = [
     annualPrice: '$249',
     perUnitMonthly: 'Per month, billed monthly',
     perUnitAnnual: 'Per month, billed yearly',
-    blurb: 'Essential marketing tools for small businesses ready to grow online.',
+    blurb:
+      'Essential marketing tools for small businesses ready to grow online.',
     features: [
       'Local SEO optimization',
       'Google Business Profile management',
@@ -44,7 +45,8 @@ const PLANS: Plan[] = [
   },
   {
     name: 'Market Leader',
-    blurb: 'Comprehensive digital presence for businesses targeting aggressive growth.',
+    blurb:
+      'Comprehensive digital presence for businesses targeting aggressive growth.',
     features: [
       'Everything in Starter Growth',
       'Advanced SEO & content strategy',
@@ -62,17 +64,21 @@ export default function FascinantePricingHero() {
   const [yearly, setYearly] = useState(true);
 
   return (
-    <section id="fascinante-pricing-hero" className="bg-background px-6 lg:px-0">
+    <section
+      id="fascinante-pricing-hero"
+      className="bg-background px-6 lg:px-0"
+    >
       <div className="container px-0 md:px-6">
         <div className="bg-features-hero relative overflow-hidden">
           <div className="mx-auto max-w-4xl px-6 py-12 text-center sm:px-8 sm:py-16 md:py-20">
             <p className="text-tagline text-sm sm:text-base">Pricing</p>
-            <h1 className="text-foreground mt-4 text-h1 font-medium tracking-tight text-balance">
+            <h1 className="text-foreground text-h1 mt-4 font-medium tracking-tight text-balance">
               Simple Pricing for
               <br className="hidden sm:block" /> Real Growth
             </h1>
             <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-base sm:text-lg">
-              Choose the plan that fits your business goals and start seeing results.
+              Choose the plan that fits your business goals and start seeing
+              results.
             </p>
 
             <div className="mt-6 flex items-center justify-center gap-3">
@@ -164,11 +170,7 @@ export default function FascinantePricingHero() {
                       {/* Price or Let’s Talk */}
                       {price ? (
                         <>
-                          <div
-                            className={cn(
-                              'mt-6 text-h2 font-semibold',
-                            )}
-                          >
+                          <div className={cn('text-h2 mt-6 font-semibold')}>
                             {price}
                           </div>
                           {!!perUnit && (
@@ -241,12 +243,13 @@ export default function FascinantePricingHero() {
                     <div className="lg:col-span-2">
                       <Button
                         asChild
+                        variant={plan.highlight ? 'default' : 'marketing'}
                         className={cn(
-                          'h-12 w-full rounded-[12px]',
+                          'w-full',
+                          plan.highlight && 'h-12 rounded-[12px]',
                           plan.highlight &&
                             'bg-primary-foreground text-tagline hover:bg-primary-foreground/90',
                         )}
-                        variant={plan.highlight ? 'default' : 'default'}
                       >
                         <Link href={plan.ctaHref ?? '#'}>{plan.ctaLabel}</Link>
                       </Button>

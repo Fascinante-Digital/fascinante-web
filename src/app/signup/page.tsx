@@ -48,11 +48,11 @@ export default function SignupPage() {
 
           <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3">
             {signupConfigured ? (
-              <Button asChild className="h-11 w-full rounded-[8px]">
+              <Button asChild variant="marketing" className="w-full">
                 <Link href={signupHref}>Continue to Sign Up</Link>
               </Button>
             ) : (
-              <Button className="h-11 w-full rounded-[8px]" disabled>
+              <Button variant="marketing" className="w-full" disabled>
                 Sign Up Temporarily Unavailable
               </Button>
             )}

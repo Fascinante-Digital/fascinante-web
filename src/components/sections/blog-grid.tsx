@@ -226,7 +226,11 @@ export default function FascinanteBlogGrid({
                 >
                   Previous
                 </Button>
-                <Button disabled={page >= totalPages} onClick={goNext}>
+                <Button
+                  variant="marketing"
+                  disabled={page >= totalPages}
+                  onClick={goNext}
+                >
                   Next
                 </Button>
               </div>
