@@ -7,8 +7,15 @@ import { useMemo, useSyncExternalStore } from 'react';
 import { cn } from '@/lib/utils';
 
 type ThreeDMarqueeProps = {
-  images: string[];
+  images: MarqueeImage[];
   className?: string;
+};
+
+export type MarqueeImage = {
+  src: string;
+  srcSet?: string;
+  sizes?: string;
+  alt?: string;
 };
 
 type GridLineProps = {
@@ -24,27 +31,62 @@ function useIsMobileViewport(): boolean {
       return () => mediaQuery.removeEventListener('change', callback);
     },
     () => window.matchMedia('(max-width: 767px)').matches,
-    () => false,
+    () => true,
   );
 }
 
 export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
   const isMobileViewport = useIsMobileViewport();
+  const mobileSizes = '(max-width: 767px) 45vw, 180px';
+  const desktopSizes = '(max-width: 1024px) 280px, 406px';
 
-  const optimizedImages = useMemo(() => {
-    const mobileLimit = 12;
-    if (!isMobileViewport || images.length <= mobileLimit) {
-      return images;
-    }
+  const mobileImages = useMemo(() => {
+    const mobileLimit = 4;
+    const uniqueImages = images.filter(
+      (image, index, allImages) =>
+        allImages.findIndex((candidate) => candidate.src === image.src) ===
+        index,
+    );
 
-    return images.slice(0, mobileLimit);
-  }, [images, isMobileViewport]);
+    return uniqueImages.slice(0, mobileLimit);
+  }, [images]);
 
-  const chunkSize = Math.ceil(optimizedImages.length / 4);
+  const desktopImages = useMemo(() => images.slice(0, 24), [images]);
+
+  const chunkSize = Math.ceil(desktopImages.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
-    return optimizedImages.slice(start, start + chunkSize);
+    return desktopImages.slice(start, start + chunkSize);
   });
+
+  if (isMobileViewport) {
+    return (
+      <div
+        className={cn(
+          'mx-auto block h-[340px] overflow-hidden rounded-2xl max-sm:h-[300px]',
+          className,
+        )}
+      >
+        <div className="grid h-full grid-cols-2 gap-3 p-3">
+          {mobileImages.map((image, imageIndex) => (
+            <motion.img
+              key={`${imageIndex}-${image.src}`}
+              src={image.src}
+              srcSet={image.srcSet}
+              sizes={image.sizes ?? mobileSizes}
+              alt={image.alt ?? `Image ${imageIndex + 1}`}
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              className="aspect-[970/700] h-full w-full rounded-lg object-cover ring ring-gray-950/5"
+              width={970}
+              height={700}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -74,7 +116,7 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
               >
                 <GridLineVertical className="-left-4" offset="80px" />
                 {subarray.map((image, imageIndex) => (
-                  <div className="relative" key={`${imageIndex}-${image}`}>
+                  <div className="relative" key={`${imageIndex}-${image.src}`}>
                     <GridLineHorizontal className="-top-4" offset="20px" />
                     <motion.img
                       whileHover={{ y: -10 }}
@@ -82,8 +124,10 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
                         duration: 0.3,
                         ease: 'easeInOut',
                       }}
-                      src={image}
-                      alt={`Image ${imageIndex + 1}`}
+                      src={image.src}
+                      srcSet={image.srcSet}
+                      sizes={image.sizes ?? desktopSizes}
+                      alt={image.alt ?? `Image ${imageIndex + 1}`}
                       loading={imageIndex === 0 ? 'eager' : 'lazy'}
                       decoding="async"
                       fetchPriority="low"
