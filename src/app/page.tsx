@@ -10,7 +10,9 @@ import FascinanteFeatures from '@/components/sections/features';
 import FascinanteIntegrations from '@/components/sections/integrations';
 import FascinanteLogos from '@/components/sections/logos';
 import FascinanteTestimonials from '@/components/sections/testimonials';
+import { JsonLd } from '@/components/seo/json-ld';
 import { getAllBlogs } from '@/lib/blog';
+import { organizationJsonLd } from '@/lib/business-entity';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -54,6 +56,7 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd id="organization-jsonld" data={organizationJsonLd} />
       <Hero239 />
       <FascinanteLogos />
       <FascinanteFeatures />

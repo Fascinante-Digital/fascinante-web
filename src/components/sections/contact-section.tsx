@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { businessProfile } from '@/lib/business-entity';
 
 export default function FascinanteContact() {
   const [fullName, setFullName] = useState('');
@@ -116,6 +117,45 @@ export default function FascinanteContact() {
             Join us as we explore tailored solutions, discuss industry insights,
             and collaborate to find the best strategies for your success.
           </p>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-3xl rounded-[12px] border border-slate-200/70 bg-white/90 p-5 text-left shadow-sm sm:mt-10 sm:p-6">
+          <h3 className="text-foreground text-lg font-semibold tracking-tight">
+            Business details
+          </h3>
+          <p className="text-muted-foreground mt-3 text-sm">
+            {businessProfile.address.streetAddress},{' '}
+            {businessProfile.address.addressLocality},{' '}
+            {businessProfile.address.addressRegion}{' '}
+            {businessProfile.address.postalCode}
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+            <a
+              href={`tel:${businessProfile.phoneE164}`}
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              {businessProfile.phoneDisplay}
+            </a>
+            <a
+              href={`mailto:${businessProfile.email}`}
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              {businessProfile.email}
+            </a>
+            <a
+              href={businessProfile.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              View on Google Maps
+            </a>
+          </div>
+          <ul className="text-muted-foreground mt-3 space-y-1 text-sm">
+            {businessProfile.displayHours.map((hoursLine) => (
+              <li key={hoursLine}>{hoursLine}</li>
+            ))}
+          </ul>
         </div>
 
         <div className="relative z-10 mt-10 sm:mt-12 md:mt-16">

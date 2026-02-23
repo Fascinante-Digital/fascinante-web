@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
 import FascinanteContact from '@/components/sections/contact-section';
+import { JsonLd } from '@/components/seo/json-ld';
+import { localBusinessJsonLd } from '@/lib/business-entity';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd id="localbusiness-jsonld" data={localBusinessJsonLd} />
       <FascinanteContact />
     </>
   );
