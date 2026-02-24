@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { isPublicUrlConfigured, publicAuthUrls } from '@/lib/public-env';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -11,15 +12,14 @@ const description =
 export const metadata: Metadata = {
   title: 'Sign Up',
   description,
-  alternates: {
-    canonical: '/signup',
-  },
+  alternates: buildAlternates('/signup'),
   robots: {
     index: false,
     follow: false,
   },
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/signup'),
     title: `Sign Up | ${siteConfig.name}`,
     description,

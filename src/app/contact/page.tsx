@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import FascinanteContact from '@/components/sections/contact-section';
 import { JsonLd } from '@/components/seo/json-ld';
 import { localBusinessJsonLd } from '@/lib/business-entity';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -11,11 +12,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Contact',
   description,
-  alternates: {
-    canonical: '/contact',
-  },
+  alternates: buildAlternates('/contact'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/contact'),
     title: `Contact | ${siteConfig.name}`,
     description,

@@ -14,6 +14,7 @@ export const siteConfig = {
   description:
     'Fascinante Digital helps growth-minded teams scale marketing, content, and customer engagement with modern digital strategies.',
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
+  defaultLocale: 'en-US',
   defaultOgImagePath: '/og-image.jpg',
   twitterHandle: '@fascinante',
 } as const;

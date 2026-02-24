@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 import { SiteBanner } from '../../apps/www/components/site-banner';
@@ -23,9 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Fascinante Digital',
   },
   description: siteConfig.description,
-  alternates: {
-    canonical: '/',
-  },
+  alternates: buildAlternates('/'),
   keywords: [
     'Digital Marketing',
     'Growth Strategy',
@@ -53,6 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteConfig.url,
+    locale: 'en_US',
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -78,7 +78,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={siteConfig.defaultLocale} suppressHydrationWarning>
       <body className={`h-screen ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

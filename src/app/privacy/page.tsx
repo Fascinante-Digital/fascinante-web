@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import LegalArticle from '@/components/sections/legal-article';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 import Privacy from './privacy.mdx';
@@ -11,11 +12,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description,
-  alternates: {
-    canonical: '/privacy',
-  },
+  alternates: buildAlternates('/privacy'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/privacy'),
     title: `Privacy Policy | ${siteConfig.name}`,
     description,

@@ -13,17 +13,17 @@ import FascinanteTestimonials from '@/components/sections/testimonials';
 import { JsonLd } from '@/components/seo/json-ld';
 import { getAllBlogs } from '@/lib/blog';
 import { organizationJsonLd } from '@/lib/business-entity';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'White-Label Reputation Platform',
   description:
     'White-label reputation infrastructure for agencies to automate review growth, AI replies, and monthly client reporting at scale.',
-  alternates: {
-    canonical: '/',
-  },
+  alternates: buildAlternates('/'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/'),
     title: siteConfig.name,
     description:

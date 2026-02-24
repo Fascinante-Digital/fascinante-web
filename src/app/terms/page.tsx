@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import LegalArticle from '@/components/sections/legal-article';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 import Terms from './terms.mdx';
@@ -11,11 +12,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description,
-  alternates: {
-    canonical: '/terms',
-  },
+  alternates: buildAlternates('/terms'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/terms'),
     title: `Terms of Service | ${siteConfig.name}`,
     description,

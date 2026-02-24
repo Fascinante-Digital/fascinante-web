@@ -5,6 +5,7 @@ import FascinanteCta from '@/components/sections/cta';
 import FascinantePartnerLogos from '@/components/sections/partner-logos';
 import FascinanteTeam from '@/components/sections/team';
 import FascinanteThroughYears from '@/components/sections/trough-years';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -13,11 +14,10 @@ const description =
 export const metadata: Metadata = {
   title: 'About',
   description,
-  alternates: {
-    canonical: '/about',
-  },
+  alternates: buildAlternates('/about'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/about'),
     title: `About | ${siteConfig.name}`,
     description,
