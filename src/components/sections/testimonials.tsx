@@ -15,86 +15,86 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      '"Working with Fascinante Digital transformed our online presence. Lead generation increased by 40% in just three months."',
-    name: 'Charolette Hanlin',
-    role: 'Co-Founder, Heroes Digital',
+      '"We launched review automation in one week and retained two clients that were about to churn."',
+    name: 'Andrea Molina',
+    role: 'Founder, Nexo Local Agency',
     avatar: '/images/homepage/testimonials/1.webp',
   },
   {
     quote:
-      '"Their data-driven approach to marketing helped us reach the right audience at the right time."',
-    name: 'Novák Balázs',
-    role: 'Co-Founder, WooCommerce',
+      '"The white-label reports made our monthly meetings easier. Clients finally see proof of progress."',
+    name: 'Victor Salazar',
+    role: 'Account Director, Elevate Media',
     avatar: '/images/homepage/testimonials/2.webp',
   },
   {
     quote:
-      '"The team at Fascinante really understands digital marketing. Our conversion rates have never been higher."',
-    name: 'Orosz Boldizsár',
-    role: 'Founder, Okta',
+      '"Before this, review follow-up was manual chaos. Now our team runs all locations from one workflow."',
+    name: 'Paula Rios',
+    role: 'Operations Lead, Radius Growth',
     avatar: '/images/homepage/testimonials/3.webp',
   },
   {
     quote:
-      '"Their strategic approach to SEO and content marketing drove significant organic growth for our business."',
-    name: 'Floyd Miles',
-    role: 'Co-Founder, Slack',
+      '"We used to sell one-off services. With Fascinante, we now sell a recurring reputation program."',
+    name: 'Luis Herrera',
+    role: 'Owner, Atlas Performance Lab',
     avatar: '/images/homepage/testimonials/4.webp',
   },
   {
     quote:
-      '"Professional, data-driven, and results-oriented. Exactly what we needed to scale our marketing."',
-    name: 'Darrell Steward',
-    role: 'Founder',
+      '"The AI draft replies save hours every week while keeping our brand voice consistent across clients."',
+    name: 'Maria Contreras',
+    role: 'Client Success Manager, Spark Local',
     avatar: '/images/homepage/testimonials/5.webp',
   },
   {
     quote:
-      '"The ROI on our marketing campaigns improved dramatically after working with Fascinante Digital."',
-    name: 'Devon Lane',
-    role: 'Marketing, Google',
+      '"Direction requests were strong but conversions were weak. The playbooks fixed that in the first month."',
+    name: 'Kevin Paredes',
+    role: 'Founder, Momentum Demand',
     avatar: '/images/homepage/testimonials/6.webp',
   },
   {
     quote:
-      '"We consolidated our marketing tools into one platform—reporting and analytics are finally clear."',
-    name: 'Jenny Wilson',
-    role: 'CFO, Mailchimp',
+      '"Our team now responds to reviews with SLA discipline. Clients notice the consistency immediately."',
+    name: 'Sofia Delgado',
+    role: 'Service Lead, Loop Agency',
     avatar: '/images/homepage/testimonials/1.webp',
   },
   {
     quote:
-      '"The marketing automation alone paid for the investment in under a month."',
-    name: 'Jacob Jones',
-    role: 'VP Ops, Notion',
+      '"The onboarding was simple enough for our junior team, but robust enough for multi-location accounts."',
+    name: 'Hector Nunez',
+    role: 'COO, Growth Harbor',
     avatar: '/images/homepage/testimonials/2.webp',
   },
   {
     quote:
-      '"Their landing page optimization improved conversion and cut our acquisition costs in half."',
-    name: 'Eleanor Pena',
-    role: 'Head of Product, Square',
+      '"We replaced three disconnected tools with one operating layer for review generation and reporting."',
+    name: 'Camila Ortega',
+    role: 'Director, Frontier Local',
     avatar: '/images/homepage/testimonials/3.webp',
   },
   {
     quote:
-      '"Our marketing team finally enjoys campaign reporting. Analytics are effortless now."',
-    name: 'Courtney Henry',
-    role: 'Marketing Lead, Spotify',
+      '"The monthly reports are client-ready out of the box. Our team spends less time formatting slides."',
+    name: 'Diego Alvarez',
+    role: 'Head of Delivery, NorthScale',
     avatar: '/images/homepage/testimonials/4.webp',
   },
   {
     quote:
-      '"The audience insights gave us visibility we didn\'t know we were missing."',
-    name: 'Leslie Alexander',
-    role: 'Director, Airtable',
+      '"As an agency, recurring revenue matters. This product gave us a service clients keep every month."',
+    name: 'Valentina Ruiz',
+    role: 'Founder, Prime Visibility Co.',
     avatar: '/images/homepage/testimonials/5.webp',
   },
   {
     quote:
-      '"From content marketing to paid ads—everything lives in one place now."',
-    name: 'Guy Hawkins',
-    role: 'Founder, Raycast',
+      '"Our account managers can now focus on strategy because repetitive review tasks are automated."',
+    name: 'Martin Vega',
+    role: 'Partner, Elevate Growth Studio',
     avatar: '/images/homepage/testimonials/6.webp',
   },
 ];
@@ -139,13 +139,13 @@ export default function FascinanteTestimonials() {
         </p>
 
         <h2 className="text-foreground mx-auto max-w-4xl text-center text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
-          See What Our <br className="hidden sm:block" />
-          Clients Say About Us
+          See How Agencies <br className="hidden sm:block" />
+          Scale Client Reputation Faster
         </h2>
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-base font-normal sm:text-lg">
-          Here&apos;s what some of our clients say about our marketing services
-          and results.
+          Agencies use Fascinante to grow review velocity, protect ratings, and
+          retain clients.
         </p>
 
         <div className="relative mt-10 md:mt-14">
@@ -166,7 +166,7 @@ export default function FascinanteTestimonials() {
           }`}
         >
           <Button variant="marketing" onClick={() => setExpanded((s) => !s)}>
-            {expanded ? 'Show Less' : 'See All Customer Stories'}
+            {expanded ? 'Show Less' : 'See All Agency Stories'}
           </Button>
         </div>
       </div>

@@ -41,14 +41,16 @@ const Hero239 = ({ className }: Hero239Props) => {
     <section className={cn('relative pt-12 pb-32', className)}>
       <div className="container flex flex-col items-center justify-center gap-5 text-center">
         <p className="bg-muted w-fit rounded-full px-4 py-1 text-sm uppercase">
-          shadcnblocks
+          Agencies
         </p>
         <h1 className="mt-3 max-w-xl text-4xl font-semibold tracking-tighter sm:text-5xl lg:max-w-3xl lg:text-6xl">
-          Unlock the Premium Blocks Just one time payment
+          White-Label Reputation Infrastructure for Growth-Focused Local
+          Agencies
         </h1>
         <p className="text-muted-foreground max-w-xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          Win more clients with automated review requests, AI replies, and
+          monthly reporting your agency can brand, sell, and scale without extra
+          headcount.
         </p>
         <div className="flex items-center gap-4">
           <button
@@ -58,7 +60,7 @@ const Hero239 = ({ className }: Hero239Props) => {
             data-size="default"
             className={blockDefaultButtonClass}
           >
-            Get Started
+            Book Demo
           </button>
           <button
             type="button"
@@ -67,7 +69,7 @@ const Hero239 = ({ className }: Hero239Props) => {
             data-size="default"
             className={blockGhostButtonClass}
           >
-            Explore Benefits <ArrowRight />
+            See Platform <ArrowRight />
           </button>
         </div>
 

@@ -19,7 +19,7 @@ export default function FascinanteFeaturedBlogPosts({
   posts = [],
   title = 'Latest Articles',
   overline = 'From Our Blog',
-  subtitle = 'Explore more insights and strategies from our digital marketing experts.',
+  subtitle = 'Explore practical playbooks for agency operations, local reputation, and recurring growth.',
 }: {
   posts?: FeaturedCard[];
   title?: string;
