@@ -4,6 +4,7 @@ import FascinanteCta from '@/components/sections/cta';
 import FascinanteFaq from '@/components/sections/faq';
 import FascinanteFeaturesIncluded from '@/components/sections/features-included';
 import FascinantePricingHero from '@/components/sections/pricing-hero';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -12,11 +13,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Pricing',
   description,
-  alternates: {
-    canonical: '/pricing',
-  },
+  alternates: buildAlternates('/pricing'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/pricing'),
     title: `Pricing | ${siteConfig.name}`,
     description,

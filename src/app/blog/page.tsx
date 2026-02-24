@@ -4,6 +4,7 @@ import FeaturedPost from '@/components/sections/blog-featured';
 import FascinanteBlogGrid from '@/components/sections/blog-grid';
 import type { BlogPost } from '@/lib/blog';
 import { getAllBlogs } from '@/lib/blog';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -12,11 +13,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Blog',
   description,
-  alternates: {
-    canonical: '/blog',
-  },
+  alternates: buildAlternates('/blog'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/blog'),
     title: `Blog | ${siteConfig.name}`,
     description,

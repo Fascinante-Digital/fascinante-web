@@ -5,6 +5,17 @@ import { toAbsoluteUrl } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
+function localizedAlternates(pathname: string) {
+  const absoluteUrl = toAbsoluteUrl(pathname);
+
+  return {
+    languages: {
+      'en-US': absoluteUrl,
+      'x-default': absoluteUrl,
+    },
+  } as const;
+}
+
 const staticRoutes = [
   '/',
   '/about',
@@ -25,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: toAbsoluteUrl(route),
     lastModified: now,
+    alternates: localizedAlternates(route),
   }));
 
   const blogEntries: MetadataRoute.Sitemap = getAllBlogs().map((post) => {
@@ -34,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       url: toAbsoluteUrl(`/blog/${post.slug}`),
       lastModified,
+      alternates: localizedAlternates(`/blog/${post.slug}`),
     };
   });
 

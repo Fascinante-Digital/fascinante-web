@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import FascinanteAllIntegrations from '@/components/sections/all-integrations';
 import FascinanteCta from '@/components/sections/cta';
 import FascinanteIntegrationsHero from '@/components/sections/integrations-hero';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -11,11 +12,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Integrations',
   description,
-  alternates: {
-    canonical: '/integrations',
-  },
+  alternates: buildAlternates('/integrations'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/integrations'),
     title: `Integrations | ${siteConfig.name}`,
     description,

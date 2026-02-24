@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import LegalArticle from '@/components/sections/legal-article';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 import CookiePolicy from './cookie-policy.mdx';
@@ -11,11 +12,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   description,
-  alternates: {
-    canonical: '/cookie-policy',
-  },
+  alternates: buildAlternates('/cookie-policy'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/cookie-policy'),
     title: `Cookie Policy | ${siteConfig.name}`,
     description,

@@ -6,6 +6,7 @@ import FascinanteFeaturePricing from '@/components/sections/feature-pricing';
 import FascinanteFeaturesHero from '@/components/sections/features-section';
 import FascinanteIntegrations from '@/components/sections/integrations';
 import FascinanteFeaturesTabs from '@/components/sections/tabs';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 const description =
@@ -14,11 +15,10 @@ const description =
 export const metadata: Metadata = {
   title: 'Features',
   description,
-  alternates: {
-    canonical: '/features',
-  },
+  alternates: buildAlternates('/features'),
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     url: toAbsoluteUrl('/features'),
     title: `Features | ${siteConfig.name}`,
     description,

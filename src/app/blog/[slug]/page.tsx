@@ -3,6 +3,7 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 
 import FascinanteBlogPost from '@/components/sections/blog-post';
 import { getBlogBySlug, getBlogSlugs } from '@/lib/blog';
+import { buildAlternates } from '@/lib/seo';
 import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 
 function getOgImagePath(coverImage: string): string {
@@ -34,11 +35,10 @@ export async function generateMetadata({
     return {
       title: post.title,
       description,
-      alternates: {
-        canonical: canonicalPath,
-      },
+      alternates: buildAlternates(canonicalPath),
       openGraph: {
         type: 'article',
+        locale: 'en_US',
         url: toAbsoluteUrl(canonicalPath),
         title: post.title,
         description,
