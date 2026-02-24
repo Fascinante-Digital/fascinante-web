@@ -7,23 +7,24 @@ type QA = { question: string; answer: string };
 
 const FAQS: QA[] = [
   {
-    question: 'How can digital marketing help grow my business?',
+    question: 'How fast can an agency launch this for client locations?',
     answer:
-      'Digital marketing increases your online visibility, attracts qualified leads, and improves conversion rates. Through SEO, content marketing, and targeted campaigns, you can reach your ideal customers where they spend their time.',
+      'Most agencies launch their first locations in days, not months. We provide a repeatable setup flow so your team can connect profiles, configure requests, and start delivering measurable review growth quickly.',
   },
   {
-    question: 'What digital marketing services do you offer?',
-    answer: `We offer a comprehensive range of services:\n1. Search Engine Optimization (SEO)\n2. Pay-Per-Click Advertising (PPC)\n3. Content Marketing\n4. Social Media Marketing\n5. Email Marketing\n6. Analytics and Reporting`,
+    question: 'Can this run as a white-label service under our agency brand?',
+    answer:
+      'Yes. The platform is designed for white-label delivery so your agency can package review automation, AI replies, and monthly reporting as your own recurring service.',
   },
   {
-    question: 'How long does it take to see results from digital marketing?',
+    question: 'Do we need a CRM integration before using the platform?',
     answer:
-      'Results vary by strategy. PPC campaigns can generate leads within days, while SEO typically shows significant results in 3-6 months. We provide regular reports so you can track progress at every stage.',
+      'No. You can start with simple workflows first and add integrations later. This helps agencies go live fast, prove value early, and expand automation as accounts grow.',
   },
   {
-    question: 'How do you measure marketing success?',
+    question: 'How do we prove ROI to clients each month?',
     answer:
-      'We track key performance indicators (KPIs) including website traffic, lead generation, conversion rates, ROI, and customer acquisition costs. Our detailed reports give you complete visibility into campaign performance.',
+      'Monthly reporting highlights review growth, rating trends, response coverage, and key profile interactions. You can show clients exactly what changed and what actions drove results.',
   },
 ];
 
@@ -146,12 +147,12 @@ export default function FascinanteFaq() {
         </p>
 
         <h2 className="text-foreground mx-auto mb-4 max-w-3xl text-center text-3xl leading-tight font-semibold tracking-tighter sm:text-4xl md:text-5xl">
-          Frequently Asked Questions About Our Services
+          Frequently Asked Questions About Agency Rollout
         </h2>
 
         <p className="text-muted-foreground mx-auto max-w-2xl text-center text-base font-normal sm:text-lg">
-          Get answers to common questions about our digital marketing services
-          and how we help businesses grow.
+          Get answers about onboarding, white-label setup, automation, and how
+          agencies deliver review growth for client locations.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col gap-4 sm:mt-14">

@@ -18,7 +18,7 @@ import { siteConfig, toAbsoluteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Home',
   description:
-    'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+    'White-label reputation infrastructure for agencies to automate review growth, AI replies, and monthly client reporting at scale.',
   alternates: {
     canonical: '/',
   },
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     url: toAbsoluteUrl('/'),
     title: siteConfig.name,
     description:
-      'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+      'White-label reputation infrastructure for agencies to automate review growth, AI replies, and monthly client reporting at scale.',
     images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
     description:
-      'Explore Fascinante Digital services for digital marketing, growth strategy, and customer acquisition programs built for modern brands.',
+      'White-label reputation infrastructure for agencies to automate review growth, AI replies, and monthly client reporting at scale.',
     images: [toAbsoluteUrl(siteConfig.defaultOgImagePath)],
   },
 };

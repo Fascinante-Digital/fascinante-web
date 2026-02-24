@@ -16,12 +16,12 @@ const FascinanteCta = () => {
 
       <div className="relative container px-0 py-16 text-center sm:py-20 md:px-6 md:py-28">
         <h2 className="text-primary-foreground text-h2 mx-auto max-w-5xl font-semibold tracking-tighter text-balance">
-          Simplifying Payments
-          <br className="hidden sm:block" /> for Growing Business
+          Scale Reputation
+          <br className="hidden sm:block" /> for Every Client
         </h2>
 
         <p className="text-primary-foreground/80 mx-auto mt-4 max-w-2xl text-base font-normal sm:text-lg">
-          Join over 300+ partners and customers already growing with Metafi
+          Launch your white-label review engine and prove progress in 30 days.
         </p>
 
         <div className="mt-8 flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
@@ -31,7 +31,7 @@ const FascinanteCta = () => {
             variant="marketing"
             className="!bg-primary-foreground !text-tagline hover:!bg-primary-foreground/90 w-full sm:w-auto"
           >
-            <Link href="/pricing">Get Started</Link>
+            <Link href="/contact">Book Demo</Link>
           </Button>
 
           {/* Transparent button */}
@@ -40,7 +40,7 @@ const FascinanteCta = () => {
             variant="marketingGhost"
             className="!border-primary-foreground/30 !text-primary-foreground hover:!bg-primary-foreground/10 w-full border !bg-transparent sm:w-auto"
           >
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact">Talk Sales</Link>
           </Button>
         </div>
       </div>

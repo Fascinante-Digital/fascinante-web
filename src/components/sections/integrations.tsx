@@ -12,43 +12,44 @@ type Integration = {
 
 const INTEGRATIONS: Integration[] = [
   {
-    name: 'Shopify integration',
+    name: 'Google Business Profile',
     description:
-      'Scale your e-commerce business with the leading commerce platform',
+      'Sync locations, reviews, and profile signals directly from Google Search and Maps.',
     icon: '/images/homepage/integrations/shopify.svg',
     href: '#',
   },
   {
     name: 'Slack integration',
     description:
-      'Get real-time notifications and updates directly in your team channels',
+      'Push review alerts and approval requests into team channels in real time.',
     icon: '/images/homepage/integrations/slack.svg',
     href: '#',
   },
   {
     name: 'Zapier integration',
     description:
-      'Connect apps and automate workflows without writing any code.',
+      'Automate review workflows and client tasks without writing custom code.',
     icon: '/images/homepage/integrations/zapier.svg',
     href: '#',
   },
   {
-    name: 'Google integration',
+    name: 'HubSpot integration',
     description:
-      'Connect Google Analytics, Ads, and other Google tools seamlessly.',
+      'Sync contacts and lifecycle stages to trigger reputation campaigns automatically.',
     icon: '/images/homepage/integrations/google.svg',
     href: '#',
   },
   {
-    name: 'Okta integration',
-    description: 'Enterprise-grade security and authentication for your team.',
+    name: 'Twilio integration',
+    description:
+      'Deliver review requests and reminders by SMS with reliable delivery.',
     icon: '/images/homepage/integrations/okta.svg',
     href: '#',
   },
   {
     name: 'Stripe integration',
     description:
-      "Accept payments securely with the world's leading payment platform.",
+      'Bill agencies per active location and track recurring revenue cleanly.',
     icon: '/images/homepage/integrations/stripe.svg',
     href: '#',
   },
@@ -92,8 +93,8 @@ const FascinanteIntegrations = () => {
         </p>
 
         <h2 className="text-foreground mx-auto max-w-3xl text-3xl leading-tight font-semibold tracking-tighter text-balance sm:text-4xl md:text-5xl">
-          Attract More Leads <br className="hidden sm:block" />
-          and Convert Better
+          Operate More Accounts <br className="hidden sm:block" />
+          with Less Manual Work
         </h2>
 
         <ul className="mt-10 grid gap-12 sm:grid-cols-2 sm:gap-6 md:mt-20 md:gap-8 lg:grid-cols-3 [@media(min-width:1024px)]:[&>li:nth-child(n+4)]:mt-8">
@@ -103,14 +104,14 @@ const FascinanteIntegrations = () => {
         </ul>
 
         <p className="text-muted-foreground text-md text-md mx-auto mt-10 max-w-3xl font-normal md:mt-20">
-          Connect your favorite marketing and business tools to streamline
-          workflows. Integrate with Google Analytics, HubSpot, Salesforce,
-          Mailchimp, and more.
+          Connect your CRM and messaging stack to trigger review workflows
+          automatically. Keep delivery consistent across client locations your
+          agency manages.
         </p>
 
         <div className="mt-6 flex justify-center">
           <Button className="w-full sm:w-auto" variant="marketing" asChild>
-            <Link href="/integrations">See All Integrations</Link>
+            <Link href="/integrations">See Workflow Stack</Link>
           </Button>
         </div>
       </div>

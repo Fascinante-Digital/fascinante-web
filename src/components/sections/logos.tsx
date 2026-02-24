@@ -26,7 +26,7 @@ const FascinanteLogos = () => {
     >
       <div className="container px-0 py-10 text-center sm:py-12 md:px-6 md:py-20">
         <p className="text-muted-foreground text-sm sm:text-base">
-          Trusted by beloved partner and customer
+          Trusted by ambitious agencies and local brands
         </p>
 
         <div className="mt-12 flex flex-col items-center gap-10 sm:gap-12 md:gap-20">
